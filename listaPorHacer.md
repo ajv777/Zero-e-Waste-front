@@ -6,7 +6,7 @@
         * Login
     * Mapa puntos limpios
     * Footer
-* Login / registro -> warp?
+* Login / registro -> guard?
     * **Usuario**
     * **Contraseña**
     * Correo electrónico
@@ -25,7 +25,7 @@
 * /puntosLimpios
 * /faq
 * /chat
-* / error
+* /error
 
 ## Base de datos
 
