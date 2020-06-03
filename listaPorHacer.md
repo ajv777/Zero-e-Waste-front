@@ -27,6 +27,10 @@
 * /chat
 * /error
 
+## Perfil
+
+
+
 ## Base de datos
 
 * Usuario

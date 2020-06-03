@@ -1,6 +1,6 @@
 <div>
     <h1>Registro</h1>
-    <form action="" [formGroup]="form"> <!-- Meter validadores al final -->
+    <form action="" [formGroup]="formRegister"> <!-- Meter validadores al final -->
         <div class="form-group">
             <label for=""> Nickname</label>
             <imput type="text" class="form-control" name="nickname" formControlName="nickname"></imput>
@@ -21,6 +21,6 @@
             <label for="">Apellidos</label>
             <imput type="text" class="form-control" name="surname" formControlName="surname"></imput>
         </div>
-        <button class="btn btn-block btn-info" click()="onClick()">Enviar</button> <!-- TERMINAR cuando sepamos almacenar datos -->
+        <button class="btn btn-block btn-info" click()="onClick()" [disabled]="!formRegister.valid">Enviar</button> <!-- TERMINAR cuando sepamos almacenar datos -->
     </form>
 </div>

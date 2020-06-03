@@ -8,10 +8,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  form: FormGroup
+  formRegister: FormGroup
 
   constructor() {
-    this.form = new FormGroup({
+    this.formRegister = new FormGroup({
       nickname: new FormControl,
       password: new FormControl,
       email: new FormControl,
