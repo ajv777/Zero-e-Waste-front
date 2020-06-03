@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-venta',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./venta.component.css']
 })
 export class VentaComponent implements OnInit {
+
+  formProduct: FormGroup;
 
   constructor() { }
 
