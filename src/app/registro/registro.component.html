@@ -3,23 +3,23 @@
     <form action="" [formGroup]="formRegister"> <!-- Meter validadores al final -->
         <div class="form-group">
             <label for=""> Nickname</label>
-            <imput type="text" class="form-control" name="nickname" formControlName="nickname"></imput>
+            <input type="text" class="form-control" name="nickname" formControlName="nickname">
         </div>
         <div class="form-group">
             <label for="">Contraseña</label>
-            <imput type="password" class="form-control" name="password" formControlName="password"></imput>
+            <input type="password" class="form-control" name="password" formControlName="password">
         </div>
         <div class="form-group">
             <label for="">Correo Electrónico</label>
-            <imput type="text" class="form-control" name="email" formControlName="email"></imput>
+            <input type="text" class="form-control" name="email" formControlName="email">
         </div>
         <div class="form-group">
             <label for="">Nombre</label>
-            <imput type="text" class="form-control" name="name" formControlName="name"></imput>
+            <input type="text" class="form-control" name="name" formControlName="name">
         </div>
         <div class="form-group">
             <label for="">Apellidos</label>
-            <imput type="text" class="form-control" name="surname" formControlName="surname"></imput>
+            <input type="text" class="form-control" name="surname" formControlName="surname">
         </div>
         <button class="btn btn-block btn-info" click()="onClick()" [disabled]="!formRegister.valid">Enviar</button> <!-- TERMINAR cuando sepamos almacenar datos -->
     </form>
