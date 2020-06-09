@@ -53,10 +53,12 @@
     
 
 ### DISEÑO
-    - Elegir paleta de colores: https://coolors.co/cae7b9-f3de8a-eb9486-7e7f9a-97a7b3
+    - Elegir paleta de colores:
+        - https://coolors.co/d5d6d8-0e402d-81c14b-ffffff
     - Hacer un logo chachi
     - Escoger tipografía
     - Nav y footer común para todos los componentes
+    - Dar a escoger la tipografía para personas con dislexia
 
 ### OTROS
     - Mapas: ver cómo capturar la latitud y longitud del usuario para registrar en la bd
