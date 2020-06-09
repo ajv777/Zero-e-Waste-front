@@ -24,11 +24,12 @@
 ### FRONT
 - Crear proyecto de Angular
 - Definir models
-    - Producto: product.model.ts
+    - Item: item.model.ts
     - User: user.model.ts
 - Generar componentes
     - Home : descripción de la web y mapa de puntos limpios
     - Compra : lista de todos los productos 
+    - DetalleProducto: detalle de un producto concreto
     - Venta : formulario para subir/editar los productos que va a vender cada usuario
     - Usuario/registro : formulario de nuevo usuario
     - Usuario/login : acceso con correo y password
@@ -47,6 +48,8 @@
         - /vender/:idVendedor - perfil para que el usuario edite sus datos
     - /puntoslimpios - mapa de puntos limpios
     - /chat - investigar socket.io 
+    - /registro - formulario de nuevo usuario
+    - /login - acceso de un usuario ya registrado
 
 - Generar servicios para enganchar con la API de express
     - ng generate service servicios/Usuarios (ejemplo)

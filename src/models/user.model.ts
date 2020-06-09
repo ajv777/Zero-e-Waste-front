@@ -1,19 +1,25 @@
 export class User {
-    nickname: string
-    password: string
-    email: string
-    name: string
-    surname: string
-    address: string
-    phoneNumber: number
+    name: string;
+    surname: string;
+    adress: string;
+    pc: number;
+    localidad: string;
+    province: string;
+    phone_number: number;
+    whatsapp: boolean;
+    email: string;
+    signup_date: Date;
 
-    constructor(nickname: string, password: string, email: string, name: string, surname: string, address: string, phoneNumber: number){
-        this.nickname =  nickname
-        this.password = password
-        this.email = email
-        this.name = name
-        this.surname = surname
-        this.address = address
-        this.phoneNumber = phoneNumber
+    constructor(pName: string, pSurname: string, pAdress: string, pPc: number, pLocalidad: string, pProvince: string, pPhone_number: number, pWhatsapp: boolean, pEmail: string, pSignup_date: Date ){
+        this.name = pName,
+        this.surname = pSurname,
+        this.adress = pAdress,
+        this.pc = pPc,
+        this.localidad = pLocalidad,
+        this.province = pProvince,
+        this.phone_number = pPhone_number,
+        this.whatsapp = pWhatsapp,
+        this.email = pEmail,
+        this.signup_date = pSignup_date
     }
 }

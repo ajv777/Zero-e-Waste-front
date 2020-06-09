@@ -8,7 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { CompraComponent } from './compra/compra.component';
 import { VentaComponent } from './venta/venta.component';
 import { PuntosLimpiosComponent } from './puntos-limpios/puntos-limpios.component';
-import { RegistroComponent } from './registro/registro.component';
+import { RegistroComponent } from './Usuario/registro/registro.component';
+import { LoginComponent } from './Usuario/login/login.component';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { RegistroComponent } from './registro/registro.component';
     CompraComponent,
     VentaComponent,
     PuntosLimpiosComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent,
+    DetalleProductoComponent
   ],
   imports: [
     BrowserModule,
