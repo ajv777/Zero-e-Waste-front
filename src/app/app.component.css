@@ -3,7 +3,7 @@
     color: white;
 }
 
-a {
+.navbar a {
     color: white;
 }
 
@@ -13,11 +13,16 @@ a:hover {
 
 
 footer {
-    background-color: #D5D6D8;
-    color: white;
-    margin-top: 50px;
-    padding-right: 10px;
-    height: 30px;
+    border-top: 1px solid #81C14B;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width: 100%;
+    height: 50px;
+}
+
+footer p {
+    color: #0E402D;
     text-align: right;
-    align-items: center;
+    padding: 7px 20px 0px 0px;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Item } from 'src/models/item.model';
 import { Router } from '@angular/router';
+/* import swal from 'sweetalert'; */
 
 @Component({
   selector: 'app-venta',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./venta.component.css']
 })
 export class VentaComponent implements OnInit {
+
 
   formProduct: FormGroup;
   currentDate: Date;
@@ -47,6 +49,7 @@ export class VentaComponent implements OnInit {
     // Llamar al servicio con el método para agregar un nuevo item
     // this.nombreDelServicio.agregarItem(newItem)
     this.router.navigate['/compra']
+/*     swal("¡Enhorabuena!", "Tu producto ya está en venta", "success"); */
   }
 
 }

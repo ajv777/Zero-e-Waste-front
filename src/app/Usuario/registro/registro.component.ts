@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/models/user.model';
+/* import swal from 'sweetalert';
+ */
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -8,23 +11,54 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  formRegister: FormGroup
-
-  constructor() {
-    this.formRegister = new FormGroup({
-      nickname: new FormControl,
-      password: new FormControl,
-      email: new FormControl,
-      name: new FormControl,
-      surname: new FormControl
+  formRegister: FormGroup;
+  currentDate: Date;
+      // Inyectar el servicio para llamar al método de crear usuarios
+  constructor (private router: Router) {
+    this.currentDate = new Date ();
+    this.formRegister = new FormGroup ({
+      name: new FormControl('', [
+        Validators.required
+      ]),
+      surname: new FormControl('', [
+        Validators.required
+      ]),
+      address: new FormControl('', [
+        Validators.required
+      ]),
+      pc: new FormControl('', [
+        Validators.required
+      ]),
+      localidad: new FormControl('', [
+        Validators.required
+      ]),
+      province: new FormControl('', [
+        Validators.required
+      ]),
+      phone_number: new FormControl('', [
+        Validators.required
+      ]),
+      whatsapp: new FormControl(),
+      email: new FormControl('', [
+        Validators.required
+      ]),
     })
-   }
-
-  ngOnInit(): void {
   }
 
-  onClick(){
-    /* TERMINAR cuando sepamos almacenar datos */
+  ngOnInit(): void {
+    
+  }
+
+  onSubmit() {
+
+    let newUser: User = this.formRegister.value;
+    newUser.signup_date = this.currentDate;
+    console.log (this.formRegister.value)
+
+    // Llamar al servicio con el método para agregar un nuevo usuario
+    // this.nombreDelServicio.agregarItem(newItem)
+    // Sweet alert
+   /*  swal("¡Felicidades!", "Ya eres parte de Zero e-Waste", "success"); */
   }
 
 }

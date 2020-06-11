@@ -7,6 +7,7 @@ import { PuntosLimpiosComponent } from './puntos-limpios/puntos-limpios.componen
 import { LoginComponent } from './Usuario/login/login.component';
 import { RegistroComponent } from './Usuario/registro/registro.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'usuario/:idUser', component: EditProfileComponent},
   {path: 'compra', component: CompraComponent},
   {path: 'compra/:idItem', component: DetalleProductoComponent},
   {path: 'venta', component: VentaComponent},

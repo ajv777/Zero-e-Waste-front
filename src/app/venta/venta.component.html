@@ -1,9 +1,16 @@
-<div class="container">
+<h3>Rellena el formulario y... ¡vende tu producto!</h3>
 <form class="mt-3" novalidate [formGroup]="formProduct" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label>Nombre</label>
-        <input type="text" class="form-control" formControlName="name" placeholder="Escribe un nombre para tu producto...">
-        <p class=error *ngIf="formProduct.controls.name.errors?.required && formProduct.controls.name.touched">El campo nombre es requerido</p>
+    <div class="row">
+        <div class="form-group col-8">
+            <label>Nombre</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Escribe un nombre para tu producto...">
+            <p class=error *ngIf="formProduct.controls.name.errors?.required && formProduct.controls.name.touched">El campo nombre es requerido</p>
+        </div>
+        <div class="form-group col-4">
+            <label>Precio</label>
+            <input type="number" class="form-control" formControlName="precio" placeholder="¿Por cuánto lo quieres vender?">
+            <p class=error *ngIf="formProduct.controls.precio.errors?.required && formProduct.controls.precio.touched">El campo precio requerido</p>
+        </div>
     </div>
     <div class="form-group">
         <label>Descripción</label>
@@ -27,19 +34,15 @@
         </select>
         <p class=error *ngIf="formProduct.controls.category.errors?.required && formProduct.controls.category.touched">No olvides seleccionar una categoría</p>
     </div>
-    <div class="form-group">
-        <label>Precio</label>
-        <input type="number" class="form-control" formControlName="precio" placeholder="¿Por cuánto lo quieres vender?">
-        <p class=error *ngIf="formProduct.controls.precio.errors?.required && formProduct.controls.precio.touched">El campo precio requerido</p>
-    </div>
-    <div class="form-group">
-        <label>¿Haces entregas por correo?</label>
-        <input type="checkbox" formControlName="post_delivery">
-    </div>
-    <div class="form-group">
-        <label>¿Entregas el producto el mano?</label>
-        <input type="checkbox" formControlName="hand_delivery">
+    <div class="row">
+        <div class="form-group col-6">
+            <label>¿Haces entregas por correo?</label>
+            <input type="checkbox" formControlName="post_delivery">
+        </div>
+        <div class="form-group col-6">
+            <label>¿Entregas el producto el mano?</label>
+            <input type="checkbox" formControlName="hand_delivery">
+        </div>
     </div>
     <input class="btn btn-block btn-info mt2" type="submit" [disabled]="!formProduct.valid">
 </form>
-</div>

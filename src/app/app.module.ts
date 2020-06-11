@@ -11,6 +11,7 @@ import { PuntosLimpiosComponent } from './puntos-limpios/puntos-limpios.componen
 import { RegistroComponent } from './Usuario/registro/registro.component';
 import { LoginComponent } from './Usuario/login/login.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -22,13 +23,15 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
     PuntosLimpiosComponent,
     RegistroComponent,
     LoginComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
