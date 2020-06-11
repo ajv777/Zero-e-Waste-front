@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #81C14B;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+
+footer {
+    background-color: #D5D6D8;
+    color: white;
+    margin-top: 50px;
+    padding-right: 10px;
+    height: 30px;
+    text-align: right;
+    align-items: center;
+}
