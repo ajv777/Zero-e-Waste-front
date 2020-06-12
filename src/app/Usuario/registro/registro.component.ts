@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/models/user.model';
-/* import swal from 'sweetalert';
- */
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -58,7 +58,12 @@ export class RegistroComponent implements OnInit {
     // Llamar al servicio con el método para agregar un nuevo usuario
     // this.nombreDelServicio.agregarItem(newItem)
     // Sweet alert
-   /*  swal("¡Felicidades!", "Ya eres parte de Zero e-Waste", "success"); */
+    Swal.fire(
+      '¡Enhorabuena!',
+      'Ya eres parte de Zero e-Waste',
+      'success'
+    )
+   // Redirigir con router al /login
   }
 
 }

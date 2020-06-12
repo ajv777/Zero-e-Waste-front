@@ -1,3 +1,6 @@
-.error {
-    color: tomato;
+input .Zero {
+    background-color: #D5D6D8;
+    border-color: #D5D6D8;
+    color: #0E402D;
+    border-radius: 10px;
 }

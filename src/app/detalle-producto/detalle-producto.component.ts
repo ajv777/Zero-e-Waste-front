@@ -12,4 +12,5 @@ export class DetalleProductoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }

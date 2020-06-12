@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CompraComponent implements OnInit {
 
-  detalleProducto: any;
+  
   
   constructor (private activatedRoute: ActivatedRoute) {
 
@@ -21,9 +21,8 @@ export class CompraComponent implements OnInit {
   onClick() {
     // Al hacer click en el div enter, se abre el detalle de cada producto
     // Inyectar servicio que recupera de la bd y pasarle el método que recupera productos por idItem
-    console.log ('estoy en click')
    /*  this.activatedRoute.params.subscribe(async params => {
-    this.detalleProducto = await this.detalleProducto.getById(parseInt(params.idItem));
+    this.arrItems = await this.detalleProducto.getById(parseInt(params.idItem));
     }) */
   }
 

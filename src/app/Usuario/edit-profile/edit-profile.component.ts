@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
   
-
+  // Recupera el usuario por id para editar sus datos
   constructor() { }
 
   ngOnInit(): void {
