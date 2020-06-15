@@ -12,9 +12,11 @@ export class CompraComponent implements OnInit {
 
   arrItems: Item[];
   
-  constructor (private itemsService: ItemsService,
-    private router: Router) {
-  }
+  constructor (
+    private itemsService: ItemsService,
+    private router: Router
+    ) 
+  {}
   
   async ngOnInit() {
     const response = await this.itemsService.allItems();

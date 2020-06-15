@@ -43,7 +43,7 @@ export class VentaComponent implements OnInit {
 
   onSubmit() {
     let newItem: Item = this.formProduct.value;
-    newItem.register_date = this.currentDate;
+    newItem.Register_date = this.currentDate;
     console.log (this.formProduct.value)
     // Llamar al servicio con el método para agregar un nuevo item
     // this.nombreDelServicio.agregarItem(newItem)

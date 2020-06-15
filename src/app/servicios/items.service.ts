@@ -11,7 +11,7 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://zeroewaste1.herokuapp.com/api'
+    this.baseUrl = ' http://localhost:3000/api'
    }
 
    allItems(): Promise<Item[]> {
@@ -19,7 +19,15 @@ export class ItemsService {
        headers: new HttpHeaders({
        "Access-Control-Allow-Origin" : "*", 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE','Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token', 'Access-Control-Allow-Credentials': 'true'})
      }
-    // La que probaba en las PruebasApi.rest de la app de node
+    // quitar httpsoptions 
     return this.httpClient.get<Item[]>(`${this.baseUrl}/items`, httpOptions).toPromise();
   }
+
+
+   ItemById(pItemId): Promise<Item[]> {
+    return this.httpClient.get<Item[]>(`${this.baseUrl}/items/`+pItemId).toPromise();
+  }
+
+  
+/* http://localhost:3000/api/items/2  */
 }
