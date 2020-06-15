@@ -16,9 +16,7 @@ export class DetalleProductoComponent implements OnInit {
     private itemsService: ItemsService,
     private router: Router, 
     private activatedRoute: ActivatedRoute) 
-    {
-
-    }
+    { }
   
   ngOnInit() {
     this.activatedRoute.params.subscribe (
@@ -27,14 +25,12 @@ export class DetalleProductoComponent implements OnInit {
         const id = params.idItem;
         const response = await this.itemsService.ItemById(id);
         /* console.log (response); */
-        if (response ['error']) {
-          this.router.navigate(['/comprar']);
-        } else {
-          this.item = response;
-        }
-
-        // ARREGLAR PARA QUE LO DEVUELVA FUERA DE LA FUNCIÓN 
+          if (response ['error']) {
+            this.router.navigate(['/comprar']);
+          } else {
+            this.item = response;
+          } 
         console.log (this.item)
-      })
+      }) 
   } 
 }
