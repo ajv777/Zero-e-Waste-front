@@ -11,12 +11,12 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://zeroewaste1.herokuapp/api/'
+    this.baseUrl = 'http://zeroewaste1.herokuapp.com/api/'
 
    }
 
-   registro(formValues): Promise<any> {
+   allItems(): Promise<Item[]> {
     // La que probaba en las PruebasApi.rest de la app de node
-    return this.httpClient.get(`${this.baseUrl}/items`, formValues).toPromise();
+    return this.httpClient.get<Item[]>(`${this.baseUrl}/items`).toPromise();
   }
 }
