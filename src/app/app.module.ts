@@ -25,7 +25,7 @@ import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.compon
     RegistroComponent,
     LoginComponent,
     DetalleProductoComponent,
-    EditProfileComponent
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ export class DetalleProductoComponent implements OnInit {
     private activatedRoute: ActivatedRoute) 
     { }
   
+  // Works
   ngOnInit() {
     this.activatedRoute.params.subscribe (
       async params => {

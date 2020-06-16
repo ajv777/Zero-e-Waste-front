@@ -50,6 +50,8 @@
             <input type="checkbox" class="custom-control-input" id="customCheck1" formControlName="hand_delivery">
             <label class="custom-control-label" for="customCheck1">¿Entregas el producto en persona?</label>
         </div>
+        <!-- Hay que pasarle el Users_Id_User para vincular el producto con el usuario que lo sube-->
+        <input type="hidden" formControlName="users_id_user">
         <input class="btn botonZero col-12 mt-4" type="submit" [disabled]="!formProduct.valid">
     </form>
 </div>

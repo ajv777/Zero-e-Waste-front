@@ -41,15 +41,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-6">
+                <div class="form-group col-4">
                     <label>Teléfono</label>
                     <input type="number" class="form-control" formControlName="phone_number" placeholder="Escribe tu número de teléfono">
                     <p class=error *ngIf="formRegister.controls.phone_number.errors?.required && formRegister.controls.phone_number.touched">El campo teléfono es requerido</p>
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-4">
                     <label>Correo electrónico</label>
                     <input type="string" class="form-control" formControlName="email" placeholder="Escribe tu número de teléfono">
                     <p class=error *ngIf="formRegister.controls.email.errors?.required && formRegister.controls.email.touched">El campo email es requerido</p>
+                </div>
+                <div class="form-group col-4">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Introduce una contraseña segura">
+                    <p class=error *ngIf="formRegister.controls.email.errors?.required && formRegister.controls.email.touched">El campo contraseña es requerido</p>
                 </div>
             </div>
             <div class="custom-control custom-checkbox col-6">

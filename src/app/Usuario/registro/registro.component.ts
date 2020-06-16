@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/models/user.model';
 import Swal from 'sweetalert2'
+import { UsersService } from 'src/app/servicios/users.service';
 
 @Component({
   selector: 'app-registro',
@@ -13,8 +13,11 @@ export class RegistroComponent implements OnInit {
 
   formRegister: FormGroup;
   currentDate: Date;
-      // Inyectar el servicio para llamar al método de crear usuarios
-  constructor (private router: Router) {
+
+  constructor (
+    private router: Router, 
+    private usersService: UsersService
+    ) {
     this.currentDate = new Date ();
     this.formRegister = new FormGroup ({
       name: new FormControl('', [
@@ -42,6 +45,9 @@ export class RegistroComponent implements OnInit {
       email: new FormControl('', [
         Validators.required
       ]),
+      password: new FormControl('', [
+        Validators.required
+      ]),
     })
   }
 
@@ -49,21 +55,26 @@ export class RegistroComponent implements OnInit {
     
   }
 
-  onSubmit() {
+// Works 
 
-    let newUser: User = this.formRegister.value;
-    newUser.signup_date = this.currentDate;
-    console.log (this.formRegister.value)
-
-    // Llamar al servicio con el método para agregar un nuevo usuario
-    // this.nombreDelServicio.agregarItem(newItem)
-    // Sweet alert
-    Swal.fire(
-      '¡Enhorabuena!',
-      'Ya eres parte de Zero e-Waste',
-      'success'
-    )
-   // Redirigir con router al /login
+  onSubmit(){
+    this.usersService.registro(this.formRegister.value)
+    .then (response => {
+      /* console.log (response); */
+      if (response.success) {
+        Swal.fire(
+          '¡Enhorabuena!',
+          'Ya eres parte de Zero e-Waste',
+          'success'
+        )
+        this.router.navigate(['/login']);
+      }
+    })
+    .catch (err => {
+      console.log (err);
+    })
   }
 
 }
+
+

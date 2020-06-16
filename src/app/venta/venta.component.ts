@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { Item } from 'src/models/item.model';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
+import { ItemsService } from '../servicios/items.service';
 
 @Component({
   selector: 'app-venta',
@@ -13,8 +13,10 @@ export class VentaComponent implements OnInit {
 
   formProduct: FormGroup;
   currentDate: Date;
-      // Inyectar el servicio para llamar al método de crear items
-  constructor (private router: Router) {
+  constructor (
+    private router: Router, 
+    private itemsService: ItemsService
+    ){
     this.currentDate = new Date ();
     this.formProduct = new FormGroup ({
       name: new FormControl('', [
@@ -34,6 +36,7 @@ export class VentaComponent implements OnInit {
       ]),
       post_delivery: new FormControl(''),
       hand_delivery: new FormControl(''),
+      users_id_user: new FormControl(1)
     })
   }
 
@@ -41,18 +44,23 @@ export class VentaComponent implements OnInit {
     
   }
 
-  onSubmit() {
-    let newItem: Item = this.formProduct.value;
-    newItem.Register_date = this.currentDate;
-    console.log (this.formProduct.value)
-    // Llamar al servicio con el método para agregar un nuevo item
-    // this.nombreDelServicio.agregarItem(newItem)
-    this.router.navigate['/compra']
-    Swal.fire(
-      '¡Enhorabuena!',
-      'Tu producto ya está en venta',
-      'success'
-    )
+  onSubmit(){
+ console.log (this.formProduct.value)
+    this.itemsService.UpItem(this.formProduct.value)
+    .then (response => {
+      console.log (response);
+      if (response.success) {
+        Swal.fire(
+          '¡Enhorabuena!',
+          '¡Tu producto ya está en venta!',
+          'success'
+        )
+        this.router.navigate(['/compra']);
+      }
+    })
+    .catch (err => {
+      console.log (err);
+    })
   }
 
 }

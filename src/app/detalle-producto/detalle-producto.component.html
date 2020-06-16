@@ -13,13 +13,19 @@
       </div>
       <div class="card-body">
         <p class="card-text">{{item?.Description}} 
-        <!-- Añadir botón para añadir a favoritos -->
+        <!-- Añadir botón para redirigir a un chatComponent  -->
         <a href="#" class="btn botonZero">Envía mensaje al vendedor</a> 
       </div>
-      <div class="card-footer text-muted">
-        Fecha de subida: 14/05/2020 - <!-- {{item.register_date}} -->
-        Entrega por correo: Si - <!-- {{item.post_delivery}} -->
-        Entrega en mano: No <!-- {{item.hand_delivery}} -->
-      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Fecha de subida: {{item?.Register_date}} 
+        </li>
+        <li class="list-group-item">
+          Entrega por correo: {{item?.Post_delivery}} 
+        </li>
+        <li class="list-group-item">
+          Entrega en mano: {{item?.Hand_Delivery}}
+        </li>
+      </ul>
   </div>
 </div>

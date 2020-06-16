@@ -11,7 +11,7 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = ' http://localhost:3000/api'
+    this.baseUrl = 'http://localhost:3000/api'
    }
 
    allItems(): Promise<Item[]> {
@@ -23,11 +23,17 @@ export class ItemsService {
     return this.httpClient.get<Item[]>(`${this.baseUrl}/items`, httpOptions).toPromise();
   }
 
-
-   ItemById(pItemId): Promise<Item[]> {
+  // Detalle de un producto - works
+  ItemById(pItemId): Promise<Item[]> {
     return this.httpClient.get<Item[]>(`${this.baseUrl}/items/`+pItemId).toPromise();
   }
 
-  
-/* http://localhost:3000/api/items/2  */
+  // Subir un nuevo producto
+  UpItem(formValues): Promise<any> {
+    formValues.hand_delivery = (formValues.hand_delivery === true) ? 1 : 0 ;
+    formValues.post_delivery = (formValues.post_delivery === true) ? 1 : 0 ;
+    /* console.log(formValues) */
+  return this.httpClient.post(`${this.baseUrl}/items`, formValues).toPromise();
+  }
+
 }
