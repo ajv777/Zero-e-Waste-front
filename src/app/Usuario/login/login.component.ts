@@ -29,13 +29,12 @@ export class LoginComponent implements OnInit {
 
   async onSubmit(){
     // Meter el método que sea (login) desde el userService
-/*     const response = await this.userService.login(this.formLogin.value);
-    console.log (this.formLogin.value)
+    const response = await this.userService.login(this.formLogin.value);
     console.log (response);
     if (response['success']) {
       const token = response['token'];
       localStorage.setItem('userToken', token);
-    } */
+    }
     // Redirigir al usuario a home
   }
 

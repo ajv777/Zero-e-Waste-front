@@ -19,17 +19,17 @@ registro(formValues): Promise<any> {
   return this.httpClient.post<any>(`${this.baseUrl}/users`, formValues).toPromise();
 }
 
-// Falta definir login pasando el token
-/* login(formValues): Promise<any> {
-  return this.httpClient.post<User[]>(`${this.baseUrl}/login`, formValues).toPromise();
-} */
+// Login - In process
+login(formValues): Promise<any> {
+  return this.httpClient.post<any>(`${this.baseUrl}/login`, formValues).toPromise();
+}
 
-// Detalle de un usuario
+// Detalle de un usuario - NO works
 UserById(pUserId): Promise<any> {
   return this.httpClient.get<any>(`${this.baseUrl}/users/`+pUserId).toPromise();
 }
 
-// Update user by id 
+// Update user by id - NO works
 UpdateUser(formValues): Promise<any> {
   return this.httpClient.put<any>(`${this.baseUrl}/users`, formValues).toPromise();
 }
