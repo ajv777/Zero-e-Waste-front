@@ -11,12 +11,15 @@ import { ItemsService } from '../servicios/items.service';
 })
 export class VentaComponent implements OnInit {
 
+  arrCategories:any[];
   formProduct: FormGroup;
   currentDate: Date;
   constructor (
     private router: Router, 
     private itemsService: ItemsService
     ){
+    this.arrCategories = [];
+    this.cargarCategorias();
     this.currentDate = new Date ();
     this.formProduct = new FormGroup ({
       name: new FormControl('', [
@@ -28,7 +31,7 @@ export class VentaComponent implements OnInit {
       pic_1: new FormControl(''),
       pic_2: new FormControl(''),
       pic_3: new FormControl(''),
-      category: new FormControl('', [
+      category_idCategory: new FormControl('', [
         Validators.required
       ]),
       precio: new FormControl('', [
@@ -40,12 +43,12 @@ export class VentaComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     
-  }
+  } 
 
   onSubmit(){
- console.log (this.formProduct.value)
+  console.log (this.formProduct.value)
     this.itemsService.UpItem(this.formProduct.value)
     .then (response => {
       console.log (response);
@@ -61,6 +64,11 @@ export class VentaComponent implements OnInit {
     .catch (err => {
       console.log (err);
     })
+  }
+
+  async cargarCategorias() {
+    this.arrCategories = await this.itemsService.getCategories();
+    console.log (this.arrCategories)
   }
 
 }

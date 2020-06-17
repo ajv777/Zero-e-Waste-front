@@ -37,9 +37,14 @@ export class ItemsService {
   return this.httpClient.post(`${this.baseUrl}/items`, formValues).toPromise();
   }
 
+  // Lista de categorías
+  getCategories (): Promise<any[]> {
+    return this.httpClient.get<any[]>(`${this.baseUrl}/cats/`).toPromise();
+  }
+
   // Lista de items por categoría
   ItemsByCategory(pCatName): Promise<Item[]> {
-    return this.httpClient.get<Item[]>(`${this.baseUrl}/items/by-cat`+pCatName).toPromise();
+    return this.httpClient.get<Item[]>(`${this.baseUrl}/items/by-cat/`+pCatName).toPromise();
   }
 
 }

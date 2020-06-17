@@ -33,14 +33,10 @@
         </div>
         <div class="form-group">
             <label>Selecciona una categoría</label>
-            <select class="custom-select" formControlName="category">
-                <option value="tv">TV, audio y foto</option>
-                <option value="telefonia">Móviles y telefonía</option>
-                <option value="informatica">Informática y electrónica</option>
-                <option value="consolas">Consolas y videojuegos</option>
-                <option value="electrodomesticos">Electrodomésticos</option>
+            <select class="custom-select" formControlName="category_idCategory">
+                <option [value]="item?.idCategory" *ngFor="let item of arrCategories">{{item?.Nombre}}</option>
             </select>
-            <p class=error *ngIf="formProduct.controls.category.errors?.required && formProduct.controls.category.touched">No olvides seleccionar una categoría</p>
+            <p class=error *ngIf="formProduct.controls.category_idCategory.errors?.required && formProduct.controls.category_idCategory.touched">No olvides seleccionar una categoría</p>
         </div>
         <div class="custom-control custom-checkbox col-6">
             <input type="checkbox" class="custom-control-input" id="customCheck2" formControlName="post_delivery">

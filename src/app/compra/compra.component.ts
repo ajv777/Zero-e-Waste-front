@@ -35,12 +35,11 @@ export class CompraComponent implements OnInit {
       const response = await this.itemsService.ItemsByCategory($event.target.value);
         console.log (response)
           if (response ['error']) {
-            console.log (response)
             this.router.navigate(['/comprar']);
           } else {
             this.arrItems = response;
           } 
-    console.log (this.arrItems)
+/*     console.log (this.arrItems) */
   } 
 } 
   
