@@ -14,14 +14,24 @@ constructor (private httpClient: HttpClient) {
   
 }
 
-// Registro works
+// Registro - works
 registro(formValues): Promise<any> {
-  return this.httpClient.post(`${this.baseUrl}/users`, formValues).toPromise();
+  return this.httpClient.post<any>(`${this.baseUrl}/users`, formValues).toPromise();
 }
 
 // Falta definir login pasando el token
-login(formValues): Promise<any> {
-  return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+/* login(formValues): Promise<any> {
+  return this.httpClient.post<User[]>(`${this.baseUrl}/login`, formValues).toPromise();
+} */
+
+// Detalle de un usuario
+UserById(pUserId): Promise<any> {
+  return this.httpClient.get<any>(`${this.baseUrl}/users/`+pUserId).toPromise();
+}
+
+// Update user by id 
+UpdateUser(formValues): Promise<any> {
+  return this.httpClient.put<any>(`${this.baseUrl}/users`, formValues).toPromise();
 }
 
 }
