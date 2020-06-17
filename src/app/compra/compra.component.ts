@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { ItemsService } from '../servicios/items.service';
 import { Item } from 'src/models/item.model';
 
@@ -15,10 +15,10 @@ export class CompraComponent implements OnInit {
   constructor (
     private itemsService: ItemsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
     ) 
   {}
   
+  // Works
   async ngOnInit() {
     const response = await this.itemsService.allItems();
 /*     console.log (response); */
@@ -29,11 +29,12 @@ export class CompraComponent implements OnInit {
     }
   }
 
+  // Works 
   async onClickCatery($event) {
     // Me devuelve el id de la categoría
-    console.log ($event.target.value)
+    /* console.log ($event.target.value) */
       const response = await this.itemsService.ItemsByCategory($event.target.value);
-        console.log (response)
+       /*  console.log (response) */
           if (response ['error']) {
             this.router.navigate(['/comprar']);
           } else {

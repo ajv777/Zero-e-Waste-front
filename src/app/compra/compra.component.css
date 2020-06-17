@@ -2,6 +2,10 @@ div .categories {
     text-align: center;
 }
 
+li {
+    text-decoration: none;
+}
+
 div .category, .item{
     cursor: pointer;
 }
