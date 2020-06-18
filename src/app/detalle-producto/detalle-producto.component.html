@@ -1,5 +1,6 @@
+<app-nav></app-nav>
 <div class="container row">
-     <!-- El carrusel no funciona -->
+     <!-- Carrusel doesnt work -->
   <div class="col-6">
     <div class="carousel-item active">
     <img class="d-block w-100" src="https://www.profesionalreview.com/wp-content/uploads/2019/02/Sistemas-de-iluminaci%C3%B3n-LED-RGB-para-PC-img03.jpg"> <!-- {{item.pic_1}} -->
@@ -7,13 +8,13 @@
   </div>
   <div class="col-6 card text-center">
       <div class="card-header">
-         <!-- METER TODAS LAS PROPIEDADES CON LA ? -->
+         <!-- Insert properties with ? -->
         {{item?.Name}} 
         {{item?.Precio}} 
       </div>
       <div class="card-body">
         <p class="card-text">{{item?.Description}} 
-        <!-- Añadir botón para redirigir a un chatComponent  -->
+        <!-- Ad button to redirect - chatComponent (doesnt exit yet) -->
         <a href="#" class="btn botonZero">Envía mensaje al vendedor</a> 
       </div>
       <ul class="list-group">

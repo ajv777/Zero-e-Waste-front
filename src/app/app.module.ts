@@ -13,6 +13,7 @@ import { RegistroComponent } from './Usuario/registro/registro.component';
 import { LoginComponent } from './Usuario/login/login.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.compon
     LoginComponent,
     DetalleProductoComponent,
     EditProfileComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

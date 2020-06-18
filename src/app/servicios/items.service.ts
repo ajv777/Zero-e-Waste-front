@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Item } from 'src/models/item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,43 +7,45 @@ import { Item } from 'src/models/item.model';
 export class ItemsService {
   
   baseUrl: string;
+  httpOptions : any;
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api'
+    this.baseUrl = 'http://localhost:3000/api';
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('userToken')
+      })
+    }
    }
 
    // All Items - works
-  allItems(): Promise<Item[]> {
-     const httpOptions = { 
-       headers: new HttpHeaders({
-       "Access-Control-Allow-Origin" : "*", 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE','Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token', 'Access-Control-Allow-Credentials': 'true'})
+  allItems(): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items`, this.httpOptions).toPromise();
   }
-    // quitar httpsoptions 
-    return this.httpClient.get<Item[]>(`${this.baseUrl}/items`, httpOptions).toPromise();
+  
+
+  // Item detail - works
+  ItemById(pItemId): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items/`+pItemId, this.httpOptions).toPromise();
   }
 
-  // Detalle de un producto - works
-  ItemById(pItemId): Promise<Item[]> {
-    return this.httpClient.get<Item[]>(`${this.baseUrl}/items/`+pItemId).toPromise();
-  }
-
-  // Subir un nuevo producto - works
+  // Create new item - works
   UpItem(formValues): Promise<any> {
     formValues.hand_delivery = (formValues.hand_delivery === true) ? 1 : 0 ;
     formValues.post_delivery = (formValues.post_delivery === true) ? 1 : 0 ;
     /* console.log(formValues) */
-  return this.httpClient.post(`${this.baseUrl}/items`, formValues).toPromise();
+  return this.httpClient.post(`${this.baseUrl}/items`, formValues, this.httpOptions).toPromise();
   }
 
-  // Lista de categorías
-  getCategories (): Promise<any[]> {
-    return this.httpClient.get<any[]>(`${this.baseUrl}/cats/`).toPromise();
+  // Categories names - works
+  getCategories (): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/cats/`, this.httpOptions).toPromise();
   }
 
-  // Lista de items por categoría
-  ItemsByCategory(pCatName): Promise<Item[]> {
-    return this.httpClient.get<Item[]>(`${this.baseUrl}/items/by-cat/`+pCatName).toPromise();
+  // Items by category - works 
+  ItemsByCategory(pCatName): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items/by-cat/`+pCatName, this.httpOptions).toPromise();
   }
 
 }
