@@ -60,7 +60,7 @@ export class RegistroComponent implements OnInit {
   onSubmit(){
     this.usersService.registro(this.formRegister.value)
     .then (response => {
-      /* console.log (response); */
+      console.log (response);
       if (response.success) {
         Swal.fire(
           '¡Enhorabuena!',
@@ -69,7 +69,7 @@ export class RegistroComponent implements OnInit {
         )
         this.router.navigate(['/login']);
       }
-    })
+    }) 
     .catch (err => {
       console.log (err);
     })

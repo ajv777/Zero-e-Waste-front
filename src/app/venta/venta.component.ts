@@ -39,7 +39,7 @@ export class VentaComponent implements OnInit {
       ]),
       post_delivery: new FormControl(''),
       hand_delivery: new FormControl(''),
-      users_id_user: new FormControl(1)
+      users_id_user: new FormControl('')
     })
   }
 

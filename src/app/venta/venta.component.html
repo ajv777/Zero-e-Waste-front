@@ -8,7 +8,7 @@
           </svg>
         <h3 class="col-8">Rellena el formulario y...¡vende tu producto!</h3>
     </div>
-    <form class="mt-3" novalidate [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+    <form class="mt-3" novalidate [formGroup]="formProduct" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
         <div class="row">
             <div class="form-group col-8">
                 <label>Nombre</label>

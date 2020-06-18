@@ -6,19 +6,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ItemsService {
   
-  baseUrl: string;
-  httpOptions : any;
+baseUrl: string;
+httpOptions : any;
 
-  constructor(private httpClient: HttpClient) {
+constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api';
-    this.httpOptions = {
-      headers: new HttpHeaders({
-        'user-token': localStorage.getItem('userToken')
-      })
-    }
-   }
-
+  this.baseUrl = 'http://localhost:3000/api';
+  this.httpOptions = {
+    headers: new HttpHeaders({
+      'user-token': localStorage.getItem('userToken')
+    })
+  }
+  }
+   
    // All Items - works
   allItems(): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/items`, this.httpOptions).toPromise();

@@ -20,7 +20,6 @@ constructor (private httpClient: HttpClient) {
   }
 }
 
-
 // Registro - works
 registro(formValues): Promise<any> {
   return this.httpClient.post<any>(`${this.baseUrl}/users`, formValues).toPromise();

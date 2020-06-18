@@ -16,6 +16,7 @@
                     <p class=error *ngIf="formLogin.controls.email.errors?.required && formLogin.controls.email.touched">El campo contraseña es requerido</p>
                 </div>
             </div>
+            <input type="hidden" formControlName="id_user">
             <input class="btn botonZero col-4" type="submit" [disabled]="!formLogin.valid">
             <div>
                 <p class="card-link" [routerLink]="['/registro']">¿Aún no te has registrado? Haz click aquí</p>
