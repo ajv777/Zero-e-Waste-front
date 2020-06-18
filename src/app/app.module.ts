@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// Insert ItemsServe to upload images
+import { ItemsService } from './servicios/items.service';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,7 +38,7 @@ import { NavComponent } from './nav/nav.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

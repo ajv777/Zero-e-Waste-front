@@ -23,17 +23,17 @@ export class AppComponent {
     ngOnInit() {
       this.activatedRoute.params.subscribe (
         async params => {
-          console.log (params.usersId)
+          /* console.log (params.usersId) */
           const id = params.usersId;
           const response = await this.usersService.UserById(id);
-          console.log (response);
+          /* console.log (response); */
             if (response ['error']) {
               console.error(response);
               this.router.navigate(['/comprar']);
             } else {
               this.user = response;
             } 
-          console.log (this.user)
+        /*   console.log (this.user) */
         }) 
     }
 }

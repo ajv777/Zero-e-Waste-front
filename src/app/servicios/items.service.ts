@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -18,7 +18,7 @@ constructor(private httpClient: HttpClient) {
     })
   }
   }
-   
+  
    // All Items - works
   allItems(): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/items`, this.httpOptions).toPromise();
@@ -46,6 +46,18 @@ constructor(private httpClient: HttpClient) {
   // Items by category - works 
   ItemsByCategory(pCatName): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/items/by-cat/`+pCatName, this.httpOptions).toPromise();
+  }
+
+  // Upload images - in process
+  UploadImage (formData): Promise<any> {
+  console.log (formData);
+  const options = {
+    headers: new HttpHeaders({
+      'user-token': localStorage.getItem('userToken'),
+      'Content-Type': 'multipart/form-data'
+    })
+  }
+  return this.httpClient.post(`${this.baseUrl}/items/uploadimg`,formData, options).toPromise();
   }
 
 }

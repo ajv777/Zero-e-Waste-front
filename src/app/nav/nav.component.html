@@ -18,11 +18,11 @@
             <li>
               <a class="nav-link" [routerLink]="['/puntoslimpios']">Reciclar</a>
             </li>
+             <!-- logout in process -->
             <li>
-              <!-- LogIn/LogOut botón if el usuario está logado (true) aparece logIn y sino LogOut. Mirar las directivas de Angular para esto. Ejercicio Registro/Login -->
-              <a class="nav-link" [routerLink]="['/puntoslimpios']">Logout</a>
+              <a class="nav-link" (click)="onClickLogOut()">Logout</a>
             </li>
           </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>

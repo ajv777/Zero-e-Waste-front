@@ -11,13 +11,20 @@ import { ItemsService } from '../servicios/items.service';
 })
 export class VentaComponent implements OnInit {
 
-  arrCategories:any[];
+  arrCategories: any[];
   formProduct: FormGroup;
   currentDate: Date;
+  arrImagenes: any[];
+
+  //Prueba subir imágenes
+  uploadedFiles: any[];
+
   constructor (
     private router: Router, 
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
     ){
+
+    this.arrImagenes =  [];
     this.arrCategories = [];
     this.cargarCategorias();
     this.currentDate = new Date ();
@@ -42,14 +49,30 @@ export class VentaComponent implements OnInit {
       users_id_user: new FormControl('')
     })
   }
-
+  
   ngOnInit() {
     
   } 
 
-  onSubmit(){
-  console.log (this.formProduct.value)
-    this.itemsService.UpItem(this.formProduct.value)
+  /* Upload images */
+  onFileChange(event) {
+    this.uploadedFiles = event.target.files;
+    this.arrImagenes.push(this.uploadedFiles[0]);
+    console.log(this.arrImagenes);
+  }
+
+  async onSubmit(){
+  /* console.log (this.formProduct.value) */
+  /* Upload images */
+  let formData = new FormData();
+  for (let i = 0; i < this.arrImagenes.length; i++) {
+    console.log(this.arrImagenes[i]);
+    formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
+  } 
+  // Call service ItemsService to upload images
+    await this.itemsService.UploadImage(formData);
+
+  this.itemsService.UpItem(this.formProduct.value)
     .then (response => {
       console.log (response);
       if (response.success) {
@@ -68,7 +91,7 @@ export class VentaComponent implements OnInit {
 
   async cargarCategorias() {
     this.arrCategories = await this.itemsService.getCategories();
-    console.log (this.arrCategories)
+   /*  console.log (this.arrCategories) */
   }
 
 }
