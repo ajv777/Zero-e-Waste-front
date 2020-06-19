@@ -61,4 +61,19 @@ constructor(private httpClient: HttpClient) {
   return this.httpClient.post(`${this.baseUrl}/items/uploadimg`,formData, options).toPromise();
   }
 
+  // Items by price asc - in process
+  ItemsByPriceAsc(pNombre): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items/by-price-asc/`+pNombre, this.httpOptions).toPromise();
+  }
+
+  // Items by price desc - in process
+  ItemsByPriceDesc(pNombre): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items/by-price-desc/`+pNombre, this.httpOptions).toPromise();
+  }
+
+  // Items by date - in process
+  ItemsByDate(pNombre): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/items/by-date/`+pNombre, this.httpOptions).toPromise();
+  }
+
 }
