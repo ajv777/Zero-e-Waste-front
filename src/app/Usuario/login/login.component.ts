@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
 /*       const id_user = response['id_user']; */
       localStorage.setItem('userToken', token);
 /*       localStorage.setItem('id_user', JSON.stringify(id_user)); */
-/*       localStorage.setItem('id_user', id_user); */
       this.router.navigate(['/home']);
     } else {
       Swal.fire(

@@ -54,7 +54,8 @@ constructor(private httpClient: HttpClient) {
   const options = {
     headers: new HttpHeaders({
       'user-token': localStorage.getItem('userToken'),
-      'Content-Type': 'multipart/form-data'
+/*       'Content-Type': 'multipart/form-data' */
+      'Content-Type': 'undefined'
     })
   }
   return this.httpClient.post(`${this.baseUrl}/items/uploadimg`,formData, options).toPromise();
