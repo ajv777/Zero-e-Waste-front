@@ -1,4 +1,4 @@
-h3, h4 {
+h1, h2, h3, h4 {
     color: #0E402D;
 }
 
@@ -13,6 +13,7 @@ h3, h4 {
     background-color: white;
     color: #0E402D;
     border-color:#0E402D;
+    cursor: pointer;
 }
 
 .error {
