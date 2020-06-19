@@ -11,6 +11,7 @@ import { Item } from 'src/models/item.model';
 export class CompraComponent implements OnInit {
 
   arrItems: Item[];
+  pNombre : any;
   
   constructor (
     private itemsService: ItemsService,
@@ -44,7 +45,7 @@ export class CompraComponent implements OnInit {
   // Order by category and price ASC - in process
   async onClickPriceAsc (pNombre) {
    /*  console.log ('I`m here') */
-   pNombre=3
+   pNombre= 3
    const response = await this.itemsService.ItemsByPriceAsc(pNombre)
    console.log (response)
    if (response ['error']) {
@@ -54,6 +55,7 @@ export class CompraComponent implements OnInit {
     this.arrItems = response;
   }
   }
+
   // Order by category and price DESC - in process
   async onClickPriceDesc (pNombre) {
    /*  console.log ('I`m here') */
