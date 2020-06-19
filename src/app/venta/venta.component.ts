@@ -17,6 +17,7 @@ export class VentaComponent implements OnInit {
   arrImagenes: any[];
   //Prueba subir imágenes
   uploadedFiles: any[];
+  formData = new FormData();
 
   constructor (
     private router: Router, 
@@ -63,13 +64,14 @@ export class VentaComponent implements OnInit {
   async onSubmit(){
   /* console.log (this.formProduct.value) */
   /* Upload images */
-  let formData = new FormData();
+   
   for (let i = 0; i < this.arrImagenes.length; i++) {
     console.log(this.arrImagenes[i]);
-    formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
+    this.formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
   } 
   // Call service ItemsService to upload images
-    await this.itemsService.UploadImage(formData);
+  console.log(JSON.stringify(this.formData))
+    await this.itemsService.UploadImage(this.formData);
 
   this.itemsService.UpItem(this.formProduct.value)
     .then (response => {

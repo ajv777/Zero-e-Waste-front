@@ -55,10 +55,11 @@ constructor(private httpClient: HttpClient) {
     headers: new HttpHeaders({
       'user-token': localStorage.getItem('userToken'),
 /*       'Content-Type': 'multipart/form-data' */
-      'Content-Type': 'undefined'
-    })
+      
+    }),
+    content: formData
   }
-  return this.httpClient.post(`${this.baseUrl}/items/uploadimg`,formData, options).toPromise();
+  return this.httpClient.post(`${this.baseUrl}/items/uploadimg`, options).toPromise();
   }
 
 }
