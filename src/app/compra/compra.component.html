@@ -57,13 +57,13 @@
 <div class="filters d-flex justify-content-around mt-3 mb-3">
   <input class="form-control mr-sm-2 col-3 filter" type="search" placeholder="Busca por palabra clave" aria-label="Search">
   <div>
-    <button type="button" class="btn botonZero">Precio (de mayor a menor)</button>
+    <button type="button" class="btn botonZero" (click)="onClickPriceAsc(pNombre)">Precio (de mayor a menor)</button>
   </div>
   <div>
-    <button type="button" class="btn botonZero">Precio (de menor a menor)</button>
+    <button type="button" class="btn botonZero" (click)="onClickPriceDesc(pNombre)">Precio (de menor a menor)</button>
   </div>
   <div>
-    <button type="button" class="btn botonZero">Fecha de subida (más recientes)</button>
+    <button type="button" class="btn botonZero" (click)="onClickDate(pNombre)">Fecha de subida (más recientes)</button>
   </div>
 </div>
       <!-- Sustituye /idItem por el id del producto -->

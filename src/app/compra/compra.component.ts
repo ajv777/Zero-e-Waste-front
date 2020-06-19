@@ -11,6 +11,7 @@ import { Item } from 'src/models/item.model';
 export class CompraComponent implements OnInit {
 
   arrItems: Item[];
+  pNombre : any;
   
   constructor (
     private itemsService: ItemsService,
@@ -31,16 +32,55 @@ export class CompraComponent implements OnInit {
 
   // Works 
   async onClickCatery($event) {
-    // Me devuelve el id de la categoría
-    /* console.log ($event.target.value) */
+    // id category
+    // console.log ($event.target.value)
       const response = await this.itemsService.ItemsByCategory($event.target.value);
-       /*  console.log (response) */
           if (response ['error']) {
             this.router.navigate(['/comprar']);
           } else {
             this.arrItems = response;
           } 
-/*     console.log (this.arrItems) */
   } 
+  
+  // Order by category and price ASC - in process
+  async onClickPriceAsc (pNombre) {
+   /*  console.log ('I`m here') */
+   pNombre= 3
+   const response = await this.itemsService.ItemsByPriceAsc(pNombre)
+   console.log (response)
+   if (response ['error']) {
+     console.log (response)
+    this.router.navigate(['/comprar']);
+  } else {
+    this.arrItems = response;
+  }
+  }
+
+  // Order by category and price DESC - in process
+  async onClickPriceDesc (pNombre) {
+   /*  console.log ('I`m here') */
+   pNombre=3
+   const response = await this.itemsService.ItemsByPriceDesc(pNombre)
+   console.log (response)
+   if (response ['error']) {
+     console.log (response)
+    this.router.navigate(['/comprar']);
+  } else {
+    this.arrItems = response;
+  }
+  }
+  // Order by category and date - in process
+  async onClickDate (pNombre) {
+   /*  console.log ('I`m here') */
+   pNombre=3
+   const response = await this.itemsService.ItemsByDate(pNombre)
+   console.log (response)
+   if (response ['error']) {
+     console.log (response)
+    this.router.navigate(['/comprar']);
+  } else {
+    this.arrItems = response;
+  }
+  }
 } 
   
