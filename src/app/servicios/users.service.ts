@@ -39,6 +39,4 @@ UpdateUser(formValues): Promise<any> {
   return this.httpClient.put<any>(`${this.baseUrl}/users`, formValues, this.httpOptions).toPromise();
 }
 
-
-
 }

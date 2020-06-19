@@ -15,7 +15,7 @@ export class VentaComponent implements OnInit {
   formProduct: FormGroup;
   currentDate: Date;
   arrImagenes: any[];
-  //Prueba subir imágenes
+  //Upload images - in process
   uploadedFiles: any[];
   formData = new FormData();
 

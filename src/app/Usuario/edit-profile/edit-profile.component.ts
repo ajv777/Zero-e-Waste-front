@@ -10,7 +10,9 @@ import { User } from 'src/models/user.model';
 })
 export class EditProfileComponent implements OnInit {
   
-  // Recupera el usuario por id para editar sus datos
+  // DELETE ALL 
+  // INSERT usersService.updateUser
+  
   user: any;
   
   constructor (
@@ -37,6 +39,5 @@ export class EditProfileComponent implements OnInit {
       }) 
   }
 
-  // en el submit meter el usersService.updateUser
 
 }

@@ -57,23 +57,23 @@ export class RegistroComponent implements OnInit {
 
 // Works 
 
-  onSubmit(){
-    this.usersService.registro(this.formRegister.value)
-    .then (response => {
-      console.log (response);
-      if (response.success) {
-        Swal.fire(
-          '¡Enhorabuena!',
-          'Ya eres parte de Zero e-Waste',
-          'success'
-        )
-        this.router.navigate(['/login']);
-      }
-    }) 
-    .catch (err => {
-      console.log (err);
-    })
-  }
+onSubmit(){
+  this.usersService.registro(this.formRegister.value)
+  .then (response => {
+    console.log (response);
+    if (response.success) {
+      Swal.fire(
+        '¡Enhorabuena!',
+        'Ya eres parte de Zero e-Waste',
+        'success'
+      )
+      this.router.navigate(['/login']);
+    }
+  }) 
+  .catch (err => {
+    console.log (err);
+  })
+}
 
 }
 

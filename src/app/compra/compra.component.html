@@ -1,4 +1,4 @@
-<!-- Añadir filtros -->
+<!-- Add filters -->
 <!-- <div class="col-12">
   <h3 class="mb-4">¿Qué quieres comprar hoy?</h3>
   <div class="row categories d-flex justify-content-center">
@@ -66,7 +66,6 @@
     <button type="button" class="btn botonZero" (click)="onClickDate(pNombre)">Fecha de subida (más recientes)</button>
   </div>
 </div>
-      <!-- Sustituye /idItem por el id del producto -->
 <div class="container" >
   <div class="row" >
     <div class="card col-3 mt-2 item" [routerLink]="['/compra',item.idItem]" *ngFor="let item of arrItems">
@@ -74,7 +73,7 @@
       <div class="card-body">
           <h5 class="card-title"> {{item.Name}}</h5>
           <p class="card-text">Precio: {{item.Precio}}</p>
-          <!-- Recupera el detalle de un producto -->
+          <!-- Item details -->
           <a class="card-link">Ver detalles</a>
       </div>
   </div>
