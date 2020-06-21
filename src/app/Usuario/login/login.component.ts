@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Works
   async onSubmit() {
     const response = await this.userService.login(this.formLogin.value);
-    console.log(this.formLogin.value);
-    console.log(response);
+    // console.log(this.formLogin.value);
+    // console.log(response);
     if (response['success']) {
       const token = response['token'];
       const id_user = response['userId'];
