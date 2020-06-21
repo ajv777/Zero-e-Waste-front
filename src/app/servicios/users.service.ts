@@ -29,7 +29,7 @@ login(formValues): Promise<any> {
   return this.httpClient.post<any>(`${this.baseUrl}/users/login`, formValues).toPromise();
 }
 
-// User detail - In process
+// User detail - works
 UserById(): Promise<any> {
   const pUserId = localStorage.getItem('userId')
   return this.httpClient.get<any>(`${this.baseUrl}/users/`+pUserId, this.httpOptions).toPromise();
