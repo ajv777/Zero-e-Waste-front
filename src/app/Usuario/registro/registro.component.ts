@@ -55,8 +55,7 @@ export class RegistroComponent implements OnInit {
     
   }
 
-// Works 
-
+// Works
 onSubmit(){
   this.usersService.registro(this.formRegister.value)
   .then (response => {
