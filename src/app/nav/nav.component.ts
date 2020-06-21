@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         localStorage.removeItem('userToken');
+        localStorage.removeItem('userId');
         Swal.fire(
           'Sesión cerrada correctamente',
           '¡Esperamos que vuelvas pronto!',
