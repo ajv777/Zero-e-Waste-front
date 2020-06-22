@@ -20,8 +20,7 @@ export class EditProfileComponent implements OnInit {
     private router : Router
     ){ 
     }
-  
-  // Works  - meter  formgroups
+  // Works  
   async ngOnInit() {
     const response = await this.usersService.UserById();
     this.user = response[0]
@@ -40,10 +39,11 @@ export class EditProfileComponent implements OnInit {
   })
   }
 
-  // No works
+  // Works - alert doesnt work
   onSubmit(){
     this.usersService.UpdateUser(this.formEdit.value)
-    .then (response => {
+    console.log (this.formEdit.value)
+   /*  .then (response => {
       console.log (response);
       if (response.success) {
         Swal.fire(
@@ -56,6 +56,6 @@ export class EditProfileComponent implements OnInit {
     }) 
     .catch (err => {
       console.log (err);
-    })
+    }) */
   }
 }
