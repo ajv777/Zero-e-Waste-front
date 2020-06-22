@@ -35,10 +35,16 @@ UserById(): Promise<any> {
   return this.httpClient.get<any>(`${this.baseUrl}/users/`+pUserId, this.httpOptions).toPromise();
 }
 
-// Update user by id - In process
+// Update user by id - works
 UpdateUser(formValues): Promise<any> {
   const pUserId = localStorage.getItem('userId')
   return this.httpClient.put<any>(`${this.baseUrl}/users/`+pUserId, formValues, this.httpOptions).toPromise();
 }
+
+// Delete user - in process
+DeleteById(): Promise<any> {
+  const pUserId = localStorage.getItem('userId')
+  return this.httpClient.delete<any>(`${this.baseUrl}/users/`+pUserId, this.httpOptions).toPromise();
+  }
 
 }

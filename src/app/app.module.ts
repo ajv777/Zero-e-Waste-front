@@ -16,6 +16,8 @@ import { LoginComponent } from './Usuario/login/login.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.component';
 import { NavComponent } from './nav/nav.component';
+import { MisProductosComponent } from './mis-productos/mis-productos.component';
+import { EditItemsComponent } from './edit-items/edit-items.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { NavComponent } from './nav/nav.component';
     DetalleProductoComponent,
     EditProfileComponent,
     NavComponent,
+    MisProductosComponent,
+    EditItemsComponent,
   ],
   imports: [
     BrowserModule,

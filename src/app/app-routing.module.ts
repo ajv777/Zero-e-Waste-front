@@ -8,6 +8,8 @@ import { LoginComponent } from './Usuario/login/login.component';
 import { RegistroComponent } from './Usuario/registro/registro.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { EditProfileComponent } from './Usuario/edit-profile/edit-profile.component';
+import { MisProductosComponent } from './mis-productos/mis-productos.component';
+import { EditItemsComponent } from './edit-items/edit-items.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'perfil', component: EditProfileComponent},
+  {path: 'productos', component: MisProductosComponent},
+  {path: 'productos/:idItem', component: EditItemsComponent},
   {path: 'compra', component: CompraComponent},
   {path: 'compra/:idItem', component: DetalleProductoComponent},
   {path: 'venta', component: VentaComponent},

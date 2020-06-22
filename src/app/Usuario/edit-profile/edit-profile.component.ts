@@ -14,6 +14,7 @@ export class EditProfileComponent implements OnInit {
   
   user: any;
   formEdit: FormGroup;
+  arrItems: any[];
   
   constructor (
     private usersService: UsersService,
@@ -58,4 +59,25 @@ export class EditProfileComponent implements OnInit {
       console.log (err);
     }) */
   }
+
+  async onClickDelete() {
+    Swal.fire({
+      title: '¿Seguro que deseas eliminar tu cuenta?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#81C14B',
+      cancelButtonColor: '#F49F0A',
+      confirmButtonText: 'Sí'
+    }).then(async (result) => {
+      if (result.value) {
+        const response = await this.usersService.DeleteById();
+        Swal.fire(
+          'Esperamos que vuelvas pronto',
+          'Esto no será lo mismo sin ti',
+          'success'
+          ) 
+          this.router.navigate(['/login']);
+        } 
+      })
+} 
 }

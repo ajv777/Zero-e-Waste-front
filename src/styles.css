@@ -5,7 +5,7 @@ h1, h2, h3, h4 {
 .botonZero {
     background-color: #0E402D;
     border-color: white;
-    color: #D5D6D8;
+    color:white;
     border-radius: 5px;
 }
 
@@ -16,8 +16,22 @@ h1, h2, h3, h4 {
     cursor: pointer;
 }
 
+.botonDelete {
+    background-color:#F49F0A;
+    border-color: white;
+    color:white;
+    border-radius: 5px;
+}
+
+.botonDelete:hover {
+    background-color: white;
+    color:#F49F0A;
+    border-color:#F49F0A;
+    cursor: pointer;
+}
+
 .error {
-    color: tomato;
+    color:#E55934;
 }
 
 svg {

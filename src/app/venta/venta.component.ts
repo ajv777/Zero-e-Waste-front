@@ -53,7 +53,6 @@ export class VentaComponent implements OnInit {
   ngOnInit() {
     
   } 
-
   /* Upload images */
 /*   onFileChange(event) {
     this.uploadedFiles = event.target.files;

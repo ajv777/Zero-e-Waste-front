@@ -20,7 +20,6 @@
                     <p class=error *ngIf="formLogin.controls.email.errors?.required && formLogin.controls.email.touched">El campo contraseña es requerido</p>
                 </div>
             </div>
-             <!-- id_user ?? localstorage-->
             <input class="btn botonZero col-6 mb-2" type="submit" [disabled]="!formLogin.valid">
             <div>
                 <p class="card-link" [routerLink]="['/registro']">¿Aún no te has registrado? Haz click aquí</p>

@@ -24,7 +24,6 @@ constructor(private httpClient: HttpClient) {
     return this.httpClient.get<any>(`${this.baseUrl}/items`, this.httpOptions).toPromise();
   }
   
-
   // Item detail - works
   ItemById(pItemId): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/items/`+pItemId, this.httpOptions).toPromise();
@@ -37,15 +36,10 @@ constructor(private httpClient: HttpClient) {
     /* console.log(formValues) */
   return this.httpClient.post(`${this.baseUrl}/items`, formValues, this.httpOptions).toPromise();
   }
-
+  
   // Categories names - works
   getCategories (): Promise<any> {
     return this.httpClient.get<any>(`${this.baseUrl}/cats/`, this.httpOptions).toPromise();
-  }
-
-  // Items by category - works 
-  ItemsByCategory(pCatName): Promise<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/items/by-cat/`+pCatName, this.httpOptions).toPromise();
   }
 
   // Upload images - in process
@@ -54,27 +48,27 @@ constructor(private httpClient: HttpClient) {
   const options = {
     headers: new HttpHeaders({
       'user-token': localStorage.getItem('userToken'),
-/*       'Content-Type': 'multipart/form-data' */
-      
+  /*'Content-Type': 'multipart/form-data' */  
     }),
     content: formData
   }
   return this.httpClient.post(`${this.baseUrl}/items/uploadimg`, options).toPromise();
   }
 
-  // Items by price asc - in process
-  ItemsByPriceAsc(pNombre): Promise<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/items/by-price-asc/`+pNombre, this.httpOptions).toPromise();
+  // Items for each user - works
+  ItemsById(): Promise<any> {
+  const pUserId = localStorage.getItem('userId')
+  return this.httpClient.get<any>(`${this.baseUrl}/items/by-user/`+pUserId, this.httpOptions).toPromise();
   }
 
-  // Items by price desc - in process
-  ItemsByPriceDesc(pNombre): Promise<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/items/by-price-desc/`+pNombre, this.httpOptions).toPromise();
+  // Delete item - works
+  DeleteById(pItemId): Promise<any> {
+  return this.httpClient.delete<any>(`${this.baseUrl}/items/`+pItemId, this.httpOptions).toPromise();
   }
 
-  // Items by date - in process
-  ItemsByDate(pNombre): Promise<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/items/by-date/`+pNombre, this.httpOptions).toPromise();
+  // Update item - works
+  UpdateById(pItemId, formValues): Promise<any> {
+    return this.httpClient.put<any>(`${this.baseUrl}/items/`+pItemId, formValues, this.httpOptions).toPromise();
   }
 
 }

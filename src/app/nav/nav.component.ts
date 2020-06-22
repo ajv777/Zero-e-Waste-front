@@ -19,8 +19,8 @@ export class NavComponent implements OnInit {
       title: '¿Seguro que deseas cerrar sesión?',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#81C14B',
+      cancelButtonColor: '#F49F0A',
       confirmButtonText: 'Sí'
     }).then((result) => {
       if (result.value) {
