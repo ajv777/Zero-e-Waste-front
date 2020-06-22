@@ -14,10 +14,10 @@ export class VentaComponent implements OnInit {
   arrCategories: any[];
   formProduct: FormGroup;
   currentDate: Date;
+  files = {};
   /* arrImagenes: any[]; */
   //Upload images - in process
  /*  uploadedFiles: any[]; */
-  formData = new FormData();
 
   constructor (
     private router: Router, 
@@ -55,25 +55,27 @@ export class VentaComponent implements OnInit {
   } 
 
   /* Upload images */
-/*   onFileChange(event) {
-    this.uploadedFiles = event.target.files;
-    this.arrImagenes.push(this.uploadedFiles[0]);
-    console.log(this.arrImagenes);
-  } */
+  onFileChange(event, fieldName) {
+    let file = event.target.files.item(0);
+    this.files[fieldName] = file
+    console.log(this.files)
+  } 
 
   async onSubmit(){
   /* console.log (this.formProduct.value) */
   /* Upload images */
-   
-/*   for (let i = 0; i < this.arrImagenes.length; i++) {
-    console.log(this.arrImagenes[i]);
-    this.formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
-  }  */
+    let formData = new FormData()
   // Call service ItemsService to upload images
-/*   console.log(JSON.stringify(this.formData))
-    await this.itemsService.UploadImage(this.formData); */
+    let values = this.formProduct.value
+    
+    for(let key in values){
+      formData.append(key, values[key])
+    }
 
-  this.itemsService.UpItem(this.formProduct.value)
+    for(let key in this.files){
+      formData.append(key, this.files[key])
+    }
+  this.itemsService.UpItem(formData)
     .then (response => {
       console.log (response);
       if (response.success) {

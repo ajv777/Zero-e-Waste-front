@@ -32,8 +32,7 @@ constructor(private httpClient: HttpClient) {
 
   // Create new item - works
   UpItem(formValues): Promise<any> {
-    formValues.hand_delivery = (formValues.hand_delivery === true) ? 1 : 0 ;
-    formValues.post_delivery = (formValues.post_delivery === true) ? 1 : 0 ;
+    
     /* console.log(formValues) */
   return this.httpClient.post(`${this.baseUrl}/items`, formValues, this.httpOptions).toPromise();
   }
@@ -50,16 +49,16 @@ constructor(private httpClient: HttpClient) {
 
   // Upload images - in process
   UploadImage (formData): Promise<any> {
-  console.log (formData);
-  const options = {
-    headers: new HttpHeaders({
-      'user-token': localStorage.getItem('userToken'),
-/*       'Content-Type': 'multipart/form-data' */
-      
-    }),
-    content: formData
-  }
-  return this.httpClient.post(`${this.baseUrl}/items/uploadimg`, options).toPromise();
+    console.log (formData);
+    const options = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('userToken'),
+  /*       'Content-Type': 'multipart/form-data' */
+        
+      }),
+      content: formData
+    }
+    return this.httpClient.post(`${this.baseUrl}/items/uploadimg`, options).toPromise();
   }
 
   // Items by price asc - in process
