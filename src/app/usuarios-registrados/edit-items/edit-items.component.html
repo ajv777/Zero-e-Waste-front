@@ -15,51 +15,17 @@
         d="M8 11.5a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-1 0v5a.5.5 0 0 0 .5.5z"
       />
     </svg>
-    <h3 class="col-8">Rellena el formulario y...¡vende tu producto!</h3>
+    <h3 class="col-8">Edita los datos de tu producto</h3>
   </div>
-  <form
-    class="mt-3"
-    novalidate
-    [formGroup]="formProduct"
-    (ngSubmit)="onSubmit()"
-    enctype="multipart/form-data"
-  >
+  <form class="mt-3" [formGroup]="formEdit" *ngIf="formEdit">
     <div class="row">
       <div class="form-group col-8">
         <label>Nombre</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="name"
-          placeholder="Escribe un nombre para tu producto..."
-        />
-        <p
-          class="error"
-          *ngIf="
-            formProduct.controls.name.errors?.required &&
-            formProduct.controls.name.touched
-          "
-        >
-          El campo nombre es requerido
-        </p>
+        <input type="text" class="form-control" formControlName="Name" />
       </div>
       <div class="form-group col-4">
         <label>Precio</label>
-        <input
-          type="number"
-          class="form-control"
-          formControlName="precio"
-          placeholder="¿Por cuánto lo quieres vender?"
-        />
-        <p
-          class="error"
-          *ngIf="
-            formProduct.controls.precio.errors?.required &&
-            formProduct.controls.precio.touched
-          "
-        >
-          El campo precio requerido
-        </p>
+        <input type="number" class="form-control" formControlName="Precio" />
       </div>
     </div>
     <div class="form-group">
@@ -68,18 +34,8 @@
         class="form-control"
         cols="10"
         rows="5"
-        formControlName="description"
-        placeholder="Añade una descripción..."
+        formControlName="Description"
       ></textarea>
-      <p
-        class="error"
-        *ngIf="
-          formProduct.controls.description.errors?.required &&
-          formProduct.controls.description.touched
-        "
-      >
-        El campo descripción es requerido
-      </p>
     </div>
     <label>Sube algunas fotos molonas</label>
     <!-- Events upload images -->
@@ -88,44 +44,35 @@
       <input
         type="file"
         accept="image/png, .jpeg, .jpg, image/gif"
-        formControlName="pic_1"
+        formControlName="Pic_1"
       />
       <input
         type="file"
         accept="image/png, .jpeg, .jpg, image/gif"
-        formControlName="pic_2"
+        formControlName="Pic_2"
       />
       <input
         type="file"
         accept="image/png, .jpeg, .jpg, image/gif"
-        formControlName="pic_3"
+        formControlName="Pic_3"
       />
     </div>
     <div class="form-group">
       <label>Selecciona una categoría</label>
-      <select class="custom-select" formControlName="category_idCategory">
+      <select class="custom-select" formControlName="Category_idCategory">
         <option [value]="item?.idCategory" *ngFor="let item of arrCategories">{{
           item?.Nombre
         }}</option>
       </select>
-      <p
-        class="error"
-        *ngIf="
-          formProduct.controls.category_idCategory.errors?.required &&
-          formProduct.controls.category_idCategory.touched
-        "
-      >
-        No olvides seleccionar una categoría
-      </p>
     </div>
     <div class="custom-control custom-checkbox col-6">
       <input
         type="checkbox"
         class="custom-control-input"
-        id="customCheck2"
-        formControlName="post_delivery"
+        id="customCheck5"
+        formControlName="Post_delivery"
       />
-      <label class="custom-control-label" for="customCheck2"
+      <label class="custom-control-label" for="customCheck5"
         >¿Haces entregas por correo?</label
       >
     </div>
@@ -133,18 +80,17 @@
       <input
         type="checkbox"
         class="custom-control-input"
-        id="customCheck1"
-        formControlName="hand_delivery"
+        id="customCheck6"
+        formControlName="Hand_delivery"
       />
-      <label class="custom-control-label" for="customCheck1"
+      <label class="custom-control-label" for="customCheck6"
         >¿Entregas el producto en persona?</label
       >
     </div>
-    <input type="hidden" formControlName="users_id_user" />
     <input
       class="btn botonZero col-12 mt-4"
       type="submit"
-      [disabled]="!formProduct.valid"
+      (click)="onSubmit()"
     />
   </form>
 </div>

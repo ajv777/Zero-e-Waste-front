@@ -1,41 +1,44 @@
-h1, h2, h3, h4 {
-    color: #0E402D;
+h1,
+h2,
+h3,
+h4 {
+  color: #0e402d;
 }
 
 .botonZero {
-    background-color: #0E402D;
-    border-color: white;
-    color:white;
-    border-radius: 5px;
+  background-color: #0e402d;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
 }
 
 .botonZero:hover {
-    background-color: white;
-    color: #0E402D;
-    border-color:#0E402D;
-    cursor: pointer;
+  background-color: white;
+  color: #0e402d;
+  border-color: #0e402d;
+  cursor: pointer;
 }
 
 .botonDelete {
-    background-color:#F49F0A;
-    border-color: white;
-    color:white;
-    border-radius: 5px;
+  background-color: #f49f0a;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
 }
 
 .botonDelete:hover {
-    background-color: white;
-    color:#F49F0A;
-    border-color:#F49F0A;
-    cursor: pointer;
+  background-color: white;
+  color: #f49f0a;
+  border-color: #f49f0a;
+  cursor: pointer;
 }
 
 .error {
-    color:#E55934;
+  color: #e55934;
 }
 
 svg {
-    color: #0E402D;
-    height: 3rem;
-    width: 3rem;
+  color: #0e402d;
+  height: 3rem;
+  width: 3rem;
 }

@@ -1,39 +1,39 @@
 div .categories {
-    text-align: center;
+  text-align: center;
 }
 
 li {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-div .category, .item{
-    cursor: pointer;
+div .category,
+.item {
+  cursor: pointer;
 }
 
 input .filter {
-    border-color: #0E402D;
+  border-color: #0e402d;
 }
 
 div .category:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .filters {
-    width: 100%;
-    padding: 10px 0 10px 0;
-    border-top: 1px solid #0E402D;
-    border-bottom: 1px solid #0E402D;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  border-top: 1px solid #0e402d;
+  border-bottom: 1px solid #0e402d;
 }
 
 .card-link {
-    color: #0E402D;
+  color: #0e402d;
 }
 
 .card-link:hover {
-    opacity: 0.7
+  opacity: 0.7;
 }
 
 div h3 {
-    text-align: center;
+  text-align: center;
 }
-

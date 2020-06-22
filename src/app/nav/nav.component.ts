@@ -5,14 +5,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(){
-  }
+  ngOnInit() {}
 
   onClickLogOut() {
     Swal.fire({
@@ -21,7 +19,7 @@ export class NavComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#81C14B',
       cancelButtonColor: '#F49F0A',
-      confirmButtonText: 'Sí'
+      confirmButtonText: 'Sí',
     }).then((result) => {
       if (result.value) {
         localStorage.removeItem('userToken');
@@ -30,11 +28,9 @@ export class NavComponent implements OnInit {
           'Sesión cerrada correctamente',
           '¡Esperamos que vuelvas pronto!',
           'success'
-          ) 
-          this.router.navigate(['/login']);
-        } 
-      })
-} 
+        );
+        this.router.navigate(['/login']);
+      }
+    });
+  }
 }
-
-
