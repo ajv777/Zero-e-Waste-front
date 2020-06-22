@@ -14,9 +14,9 @@ export class VentaComponent implements OnInit {
   arrCategories: any[];
   formProduct: FormGroup;
   currentDate: Date;
-  arrImagenes: any[];
+  /* arrImagenes: any[]; */
   //Upload images - in process
-  uploadedFiles: any[];
+ /*  uploadedFiles: any[]; */
   formData = new FormData();
 
   constructor (
@@ -24,7 +24,7 @@ export class VentaComponent implements OnInit {
     private itemsService: ItemsService,
     ){
 
-    this.arrImagenes =  [];
+   /*  this.arrImagenes =  []; */
     this.arrCategories = [];
     this.cargarCategorias();
     this.currentDate = new Date ();
@@ -55,23 +55,23 @@ export class VentaComponent implements OnInit {
   } 
 
   /* Upload images */
-  onFileChange(event) {
+/*   onFileChange(event) {
     this.uploadedFiles = event.target.files;
     this.arrImagenes.push(this.uploadedFiles[0]);
     console.log(this.arrImagenes);
-  }
+  } */
 
   async onSubmit(){
   /* console.log (this.formProduct.value) */
   /* Upload images */
    
-  for (let i = 0; i < this.arrImagenes.length; i++) {
+/*   for (let i = 0; i < this.arrImagenes.length; i++) {
     console.log(this.arrImagenes[i]);
     this.formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
-  } 
+  }  */
   // Call service ItemsService to upload images
-  console.log(JSON.stringify(this.formData))
-    await this.itemsService.UploadImage(this.formData);
+/*   console.log(JSON.stringify(this.formData))
+    await this.itemsService.UploadImage(this.formData); */
 
   this.itemsService.UpItem(this.formProduct.value)
     .then (response => {

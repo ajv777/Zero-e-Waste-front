@@ -13,6 +13,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class EditProfileComponent implements OnInit {
   
   user: any;
+  formEdit: FormGroup;
   
   constructor (
     private usersService: UsersService,
@@ -20,16 +21,28 @@ export class EditProfileComponent implements OnInit {
     ){ 
     }
   
-  // Works 
+  // Works  - meter  formgroups
   async ngOnInit() {
     const response = await this.usersService.UserById();
     this.user = response[0]
     console.log(this.user)
+
+    this.formEdit = new FormGroup ({
+      Name: new FormControl(this.user.Name),
+      Surname: new FormControl(this.user.Surname),
+      Address: new FormControl(this.user.Address),
+      PC: new FormControl(this.user.PC),
+      Localidad: new FormControl(this.user.Localidad),
+      Province: new FormControl(this.user.Province),
+      Phone_number: new FormControl(this.user.Phone_number),
+      Whatsapp: new FormControl(this.user.Whatsapp),
+      Email: new FormControl(this.user.Email),
+  })
   }
 
   // No works
   onSubmit(){
-    this.usersService.UpdateUser(this.user)
+    this.usersService.UpdateUser(this.formEdit.value)
     .then (response => {
       console.log (response);
       if (response.success) {
