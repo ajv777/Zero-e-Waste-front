@@ -32,8 +32,6 @@ export class VentaComponent implements OnInit {
       pic_3: new FormControl(''),
       category_idCategory: new FormControl('', [Validators.required]),
       precio: new FormControl('', [Validators.required]),
-      post_delivery: new FormControl(''),
-      hand_delivery: new FormControl(''),
       users_id_user: new FormControl(''),
     });
   }

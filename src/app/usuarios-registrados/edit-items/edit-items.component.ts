@@ -41,8 +41,6 @@ export class EditItemsComponent implements OnInit {
         Pic_2: new FormControl(this.item.Pic_2),
         Pic_3: new FormControl(this.item.Pic_3),
         Category_idCategory: new FormControl(this.item.Category_idCategory),
-        Post_delivery: new FormControl(this.item.Post_delivery),
-        Hand_delivery: new FormControl(this.item.Hand_delivery),
       });
     });
   }
