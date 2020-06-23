@@ -46,21 +46,6 @@ export class ItemsService {
       .toPromise();
   }
 
-  // Upload images - in process
-  UploadImage(formData): Promise<any> {
-    console.log(formData);
-    const options = {
-      headers: new HttpHeaders({
-        'user-token': localStorage.getItem('userToken'),
-        /*       'Content-Type': 'multipart/form-data' */
-      }),
-      content: formData,
-    };
-    return this.httpClient
-      .post(`${this.baseUrl}/items/uploadimg`, options)
-      .toPromise();
-  }
-
   // Items for each user - works
   itemsByIdUser(): Promise<any> {
     const pUserId = localStorage.getItem('userId');
