@@ -16,12 +16,8 @@ export class VentaComponent implements OnInit {
   files = {};
   /* arrImagenes: any[]; */
   //Upload images - in process
-<<<<<<< HEAD
- /*  uploadedFiles: any[]; */
-=======
   /*  uploadedFiles: any[]; */
   formData = new FormData();
->>>>>>> featured-editUser
 
   constructor(private router: Router, private itemsService: ItemsService) {
     /*  this.arrImagenes =  []; */
@@ -44,63 +40,28 @@ export class VentaComponent implements OnInit {
 
   ngOnInit() {}
   /* Upload images */
-<<<<<<< HEAD
   onFileChange(event, fieldName) {
     let file = event.target.files.item(0);
-    this.files[fieldName] = file
-    console.log(this.files)
-  } 
-
-  async onSubmit(){
-  /* console.log (this.formProduct.value) */
-  /* Upload images */
-    let formData = new FormData()
-  // Call service ItemsService to upload images
-    let values = this.formProduct.value
-    
-    for(let key in values){
-      formData.append(key, values[key])
-    }
-
-    for(let key in this.files){
-      formData.append(key, this.files[key])
-    }
-  this.itemsService.UpItem(formData)
-    .then (response => {
-      console.log (response);
-      if (response.success) {
-        Swal.fire(
-          '¡Enhorabuena!',
-          '¡Tu producto ya está en venta!',
-          'success'
-        )
-        this.router.navigate(['/compra']);
-      }
-    })
-    .catch (err => {
-      console.log (err);
-    })
-=======
-  /*   onFileChange(event) {
-    this.uploadedFiles = event.target.files;
-    this.arrImagenes.push(this.uploadedFiles[0]);
-    console.log(this.arrImagenes);
-  } */
+    this.files[fieldName] = file;
+    console.log(this.files);
+  }
 
   async onSubmit() {
     /* console.log (this.formProduct.value) */
     /* Upload images */
-
-    /*   for (let i = 0; i < this.arrImagenes.length; i++) {
-    console.log(this.arrImagenes[i]);
-    this.formData.append("imagen", this.arrImagenes[i], this.arrImagenes[i].name);
-  }  */
+    let formData = new FormData();
     // Call service ItemsService to upload images
-    /*   console.log(JSON.stringify(this.formData))
-    await this.itemsService.UploadImage(this.formData); */
+    let values = this.formProduct.value;
 
+    for (let key in values) {
+      formData.append(key, values[key]);
+    }
+
+    for (let key in this.files) {
+      formData.append(key, this.files[key]);
+    }
     this.itemsService
-      .createItem(this.formProduct.value)
+      .UpItem(formData)
       .then((response) => {
         console.log(response);
         if (response.success) {
@@ -115,7 +76,6 @@ export class VentaComponent implements OnInit {
       .catch((err) => {
         console.log(err);
       });
->>>>>>> featured-editUser
   }
 
   async cargarCategorias() {

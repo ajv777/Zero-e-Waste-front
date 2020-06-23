@@ -32,14 +32,7 @@ export class ItemsService {
   }
 
   // Create new item - works
-<<<<<<< HEAD
   UpItem(formValues): Promise<any> {
-    
-=======
-  createItem(formValues): Promise<any> {
-    formValues.hand_delivery = formValues.hand_delivery === true ? 1 : 0;
-    formValues.post_delivery = formValues.post_delivery === true ? 1 : 0;
->>>>>>> featured-editUser
     /* console.log(formValues) */
     return this.httpClient
       .post(`${this.baseUrl}/items`, formValues, this.httpOptions)
@@ -54,32 +47,18 @@ export class ItemsService {
   }
 
   // Upload images - in process
-<<<<<<< HEAD
-  UploadImage (formData): Promise<any> {
-    console.log (formData);
-    const options = {
-      headers: new HttpHeaders({
-        'user-token': localStorage.getItem('userToken'),
-  /*       'Content-Type': 'multipart/form-data' */
-        
-      }),
-      content: formData
-    }
-    return this.httpClient.post(`${this.baseUrl}/items/uploadimg`, options).toPromise();
-=======
-  uploadImage(formData): Promise<any> {
+  UploadImage(formData): Promise<any> {
     console.log(formData);
     const options = {
       headers: new HttpHeaders({
         'user-token': localStorage.getItem('userToken'),
-        /*'Content-Type': 'multipart/form-data' */
+        /*       'Content-Type': 'multipart/form-data' */
       }),
       content: formData,
     };
     return this.httpClient
       .post(`${this.baseUrl}/items/uploadimg`, options)
       .toPromise();
->>>>>>> featured-editUser
   }
 
   // Items for each user - works
