@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../servicios/items.service';
+import { UsersService } from '../servicios/users.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -8,6 +9,7 @@ import { ItemsService } from '../servicios/items.service';
   styleUrls: ['./detalle-producto.component.css'],
 })
 export class DetalleProductoComponent implements OnInit {
+  user: any;
   item: any;
 
   constructor(
@@ -16,8 +18,11 @@ export class DetalleProductoComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  // Works
   ngOnInit() {
+    // No works - falta meter una query para recuperar los datos de ambas tablas
+    // const response = await this.usersService.allUsers();
+    // console.log(response);
+
     this.activatedRoute.params.subscribe(async (params) => {
       /* console.log (params.idItem) */
       const id = params.idItem;
@@ -30,5 +35,7 @@ export class DetalleProductoComponent implements OnInit {
       }
       console.log(this.item);
     });
+    this.user.Id_User = this.item.Users_Id_User;
+    console.log('user id', this.user.Id_User);
   }
 }

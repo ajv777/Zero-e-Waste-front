@@ -14,9 +14,6 @@ export class VentaComponent implements OnInit {
   formProduct: FormGroup;
   currentDate: Date;
   files = {};
-  /* arrImagenes: any[]; */
-  //Upload images - in process
-  /*  uploadedFiles: any[]; */
   formData = new FormData();
 
   constructor(private router: Router, private itemsService: ItemsService) {
@@ -27,7 +24,7 @@ export class VentaComponent implements OnInit {
     this.formProduct = new FormGroup({
       name: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
-      pic_1: new FormControl(''),
+      pic_1: new FormControl('', [Validators.required]),
       pic_2: new FormControl(''),
       pic_3: new FormControl(''),
       category_idCategory: new FormControl('', [Validators.required]),

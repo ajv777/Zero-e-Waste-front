@@ -13,6 +13,7 @@ export class EditItemsComponent implements OnInit {
   item: any;
   formEdit: FormGroup;
   arrCategories: any[];
+  files = {};
 
   constructor(
     private itemsService: ItemsService,
@@ -44,8 +45,24 @@ export class EditItemsComponent implements OnInit {
       });
     });
   }
+  /* Upload images */
+  onFileChange(event, fieldName) {
+    let file = event.target.files.item(0);
+    this.files[fieldName] = file;
+    console.log(this.files);
+  }
 
   onSubmit() {
+    let formData = new FormData();
+    let values = this.formEdit.value;
+
+    for (let key in values) {
+      formData.append(key, values[key]);
+    }
+
+    for (let key in this.files) {
+      formData.append(key, this.files[key]);
+    }
     this.itemsService
       .updateItemById(this.item.idItem, this.formEdit.value)
       .then((response) => {

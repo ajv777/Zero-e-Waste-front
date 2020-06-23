@@ -19,7 +19,7 @@ export class EditProfileComponent implements OnInit {
   async ngOnInit() {
     const response = await this.usersService.userById();
     this.user = response[0];
-    console.log(this.user);
+    // console.log(this.user);
 
     this.formEdit = new FormGroup({
       Name: new FormControl(this.user.Name),

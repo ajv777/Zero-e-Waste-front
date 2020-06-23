@@ -12,7 +12,7 @@ import { VentaComponent } from './venta/venta.component';
 import { PuntosLimpiosComponent } from './puntos-limpios/puntos-limpios.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'compra/:idItem', component: DetalleProductoComponent },
   { path: 'venta', component: VentaComponent },
   { path: 'puntoslimpios', component: PuntosLimpiosComponent },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({

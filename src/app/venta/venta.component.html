@@ -91,6 +91,15 @@
         formControlName="pic_1"
         (change)="onFileChange($event, 'pic_1')"
       />
+      <p
+        class="error"
+        *ngIf="
+          formProduct.controls.pic_1.errors?.required &&
+          formProduct.controls.pic_1.touched
+        "
+      >
+        Sube al menos una foto de tu producto
+      </p>
       <input
         type="file"
         accept="image/png, .jpeg, .jpg, image/gif"

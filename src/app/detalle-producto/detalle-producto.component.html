@@ -1,33 +1,42 @@
 <app-nav></app-nav>
-<div class="container row">
-  <!-- Carrusel doesnt work -->
-  <div class="col-6">
-    <div class="carousel-item active">
+<div class="container">
+  <div class="row">
+    <div class="col-7">
       <img
-        class="d-block w-100"
-        src="https://www.profesionalreview.com/wp-content/uploads/2019/02/Sistemas-de-iluminaci%C3%B3n-LED-RGB-para-PC-img03.jpg"
+        class="card-img-top"
+        [src]="'http://localhost:3000/media/' + item.Pic_1"
       />
-      <!-- {{item.pic_1}} -->
+      <img
+        *ngIf="item.Pic_2"
+        class="card-img-top"
+        [src]="'http://localhost:3000/media/' + item.Pic_2"
+      />
+      <img
+        *ngIf="item.Pic_3"
+        class="card-img-top"
+        [src]="'http://localhost:3000/media/' + item.Pic_3"
+      />
     </div>
-  </div>
-  <div class="col-6 card text-center">
-    <div class="card-header">
-      <!-- Insert properties with ? -->
-      {{ item?.Name }}
-      {{ item?.Precio }}
+    <div class="card card-body col-5">
+      <h3 class="card-title">{{ item?.Name }}</h3>
+      <h5 class="card-title">Precio: {{ item?.Precio }}€</h5>
+      <p class="card-text">{{ item?.Description }}</p>
+      <p class="card-text">Fecha de registro: {{ item?.Register_date }}</p>
+      <h5 class="card-title">Datos del vendedor</h5>
+      <ul class="list">
+        <!-- On going : get information to table "users" - Query with INNERJOIN -->
+        <li>{{ item?.Users_Id_User }}</li>
+        <!-- <li>{{ this.user.Name }} {{ this.user.Surname }}</li> -->
+        <!-- <li>{{ this.user.Localidad }} ({{ this.user.Province }})</li>
+        <li>Teléfono: {{ this.user.Phone_number }}</li>
+        <li>Disponible por WhatsApp: {{ this.user.Whatsapp }}</li> -->
+      </ul>
+      <!-- <a href="mailto: {{ this.user.Email }}" class="btn botonZero"
+        >Envía un correo a {{ this.user.Name }}</a
+      >
+      <a href="mailto: {{ this.user.Email }}" class="btn botonZero"
+        >Llamar a {{ this.user.Name }}</a
+      > -->
     </div>
-    <div class="card-body">
-      <p class="card-text">
-        {{ item?.Description }}
-        <!-- Add button to redirect - chatComponent (doesnt exit yet) -->
-        <a href="#" class="btn botonZero">Envía mensaje al vendedor</a>
-      </p>
-    </div>
-
-    <ul class="list-group">
-      <li class="list-group-item">
-        Fecha de subida: {{ item?.Register_date }}
-      </li>
-    </ul>
   </div>
 </div>

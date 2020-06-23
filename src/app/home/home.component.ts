@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { UsersService } from '../servicios/users.service';
 
 @Component({
   selector: 'app-home',
