@@ -1,0 +1,204 @@
+<div class="container">
+  <div class="row d-flex align-items-center ml-1">
+    <svg class="bi bi-person-fill" viewBox="0 0 16 16" fill="currentColor">
+      <path
+        fill-rule="evenodd"
+        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+      />
+    </svg>
+    <h3 class="col-8">
+      Rellena el formulario, ¡en un minuto estará todo listo!
+    </h3>
+  </div>
+  <form
+    class="mt-3"
+    novalidate
+    [formGroup]="formRegister"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="row">
+      <div class="form-group col-6">
+        <label>Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Escribe tu nombre..."
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.name.errors?.required &&
+            formRegister.controls.name.touched
+          "
+        >
+          El campo nombre es requerido
+        </p>
+      </div>
+      <div class="form-group col-6">
+        <label>Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="surname"
+          placeholder="Escribe tus apellidos..."
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.surname.errors?.required &&
+            formRegister.controls.surname.touched
+          "
+        >
+          El campo apellidos es requerido
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-3">
+        <label>Dirección</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="address"
+          placeholder="Calle/Portal..."
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.address.errors?.required &&
+            formRegister.controls.address.touched
+          "
+        >
+          El campo dirección es requerido
+        </p>
+      </div>
+      <div class="form-group col-3">
+        <label>Código postal</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="pc"
+          placeholder="Escribe tu código postal..."
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.pc.errors?.required &&
+            formRegister.controls.pc.touched
+          "
+        >
+          El campo C.P. es requerido
+        </p>
+      </div>
+      <div class="form-group col-3">
+        <label>Localidad</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="localidad"
+          placeholder="Escribe tu localidad"
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.localidad.errors?.required &&
+            formRegister.controls.localidad.touched
+          "
+        >
+          El campo localidad es requerido
+        </p>
+      </div>
+      <div class="form-group col-3">
+        <label>Provincia</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="province"
+          placeholder="Escribe tu provincia"
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.province.errors?.required &&
+            formRegister.controls.province.touched
+          "
+        >
+          El campo provincia es requerido
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-4">
+        <label>Teléfono</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="phone_number"
+          placeholder="Escribe tu número de teléfono"
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.phone_number.errors?.required &&
+            formRegister.controls.phone_number.touched
+          "
+        >
+          El campo teléfono es requerido
+        </p>
+      </div>
+      <div class="form-group col-4">
+        <label>Correo electrónico</label>
+        <input
+          type="string"
+          class="form-control"
+          formControlName="email"
+          placeholder="Escribe tu número de teléfono"
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.email.errors?.required &&
+            formRegister.controls.email.touched
+          "
+        >
+          El campo email es requerido
+        </p>
+      </div>
+      <div class="form-group col-4">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Introduce una contraseña segura"
+        />
+        <p
+          class="error"
+          *ngIf="
+            formRegister.controls.email.errors?.required &&
+            formRegister.controls.email.touched
+          "
+        >
+          El campo contraseña es requerido
+        </p>
+      </div>
+    </div>
+    <div class="custom-control custom-checkbox col-6">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="customCheck3"
+        formControlName="whatsapp"
+      />
+      <label class="custom-control-label" for="customCheck3"
+        >¿Estás disponible por WhatsApp?</label
+      >
+    </div>
+    <input
+      class="btn botonZero mt-4 col-12"
+      type="submit"
+      [disabled]="!formRegister.valid"
+    />
+  </form>
+</div>
