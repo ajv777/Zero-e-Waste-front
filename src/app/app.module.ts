@@ -17,6 +17,7 @@ import { EditProfileComponent } from './usuarios-registrados/edit-profile/edit-p
 import { NavComponent } from './nav/nav.component';
 import { MisProductosComponent } from './usuarios-registrados/mis-productos/mis-productos.component';
 import { EditItemsComponent } from './usuarios-registrados/edit-items/edit-items.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditItemsComponent } from './usuarios-registrados/edit-items/edit-items
     NavComponent,
     MisProductosComponent,
     EditItemsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,9 @@ import { EditItemsComponent } from './usuarios-registrados/edit-items/edit-items
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCnj_5wyWHiT0VNUqQUpTsFgfm1FvqpOJM'
+    })
   ],
   providers: [ItemsService],
   bootstrap: [AppComponent],

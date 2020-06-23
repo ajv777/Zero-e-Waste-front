@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AgmCoreModule } from '@agm/core'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-puntos-limpios',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puntos-limpios.component.css'],
 })
 export class PuntosLimpiosComponent implements OnInit {
-  constructor() {}
+  constructor(private http: HttpClient) {
+   
+  }
 
   ngOnInit(): void {}
 }
