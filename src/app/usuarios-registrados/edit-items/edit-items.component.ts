@@ -28,14 +28,15 @@ export class EditItemsComponent implements OnInit {
     this.activatedRoute.params.subscribe(async (params) => {
       const id = params.idItem;
       const response = await this.itemsService.itemById(id);
+      // works console.log(response);
       if (response['error']) {
         this.router.navigate(['/comprar']);
       } else {
         this.item = response;
       }
-      // console.log (this.item)
+      console.log(this.item);
       this.formEdit = new FormGroup({
-        Name: new FormControl(this.item.Name),
+        NameItem: new FormControl(this.item.NameItem),
         Precio: new FormControl(this.item.Precio),
         Description: new FormControl(this.item.Description),
         Pic_1: new FormControl(this.item.Pic_1),

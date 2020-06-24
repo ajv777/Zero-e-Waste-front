@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../servicios/items.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -18,19 +19,15 @@ export class DetalleProductoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // No works - falta meter una query para recuperar los datos de ambas tablas
-    // const response = await this.usersService.allUsers();
-    // console.log(response);
-
     this.activatedRoute.params.subscribe(async (params) => {
-      /* console.log (params.idItem) */
       const id = params.idItem;
       const response = await this.itemsService.itemAndUser(id);
-
       if (response['error']) {
         this.router.navigate(['/comprar']);
       } else {
         this.item = response[0];
+        this.item.Register_date = moment(this.item.Register_date).format('ll');
+
         console.log(this.item);
       }
     });

@@ -18,24 +18,25 @@
       />
     </div>
     <div class="card card-body col-5">
-      <h3 class="card-title">{{ item?.Name }}</h3>
+      <h3 class="card-title">{{ item?.NameItem }}</h3>
       <h5 class="card-title">Precio: {{ item?.Precio }}€</h5>
       <p class="card-text">{{ item?.Description }}</p>
       <p class="card-text">Fecha de registro: {{ item?.Register_date }}</p>
       <h5 class="card-title">Datos del vendedor</h5>
       <ul class="list">
-        <!-- On going : get information to table "users" - Query with INNERJOIN -->
         <li>{{ item?.Name }} {{ item?.Surname }}</li>
         <li>{{ item?.Localidad }} ({{ item?.Province }})</li>
         <li>Teléfono: {{ item?.Phone_number }}</li>
         <li>Disponible por WhatsApp: {{ item?.Whatsapp }}</li>
       </ul>
-      <a href="mailto: {{ item?.Email }}" class="btn botonZero"
-        >Envía un correo a {{ item?.Name }}</a
-      >
-      <a href="mailto: {{ item?.Email }}" class="btn botonZero"
-        >Llamar a {{ item?.Name }}</a
-      >
+      <div class="row d-flex justify-content-center">
+        <a href="mailto: {{ item?.Email }}" class="btn botonGreen col-5 mr-2"
+          >Enviar un correo a {{ item?.Name }}</a
+        >
+        <a href="tel:{{ item?.Phone_Number }}" class="btn botonGreen col-5"
+          >Llamar a {{ item?.Name }}</a
+        >
+      </div>
     </div>
   </div>
 </div>

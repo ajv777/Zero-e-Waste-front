@@ -33,6 +33,20 @@ h4 {
   cursor: pointer;
 }
 
+.botonGreen {
+  background-color: #81c14b;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+}
+
+.botonGreen:hover {
+  background-color: white;
+  color: #81c14b;
+  border-color: #81c14b;
+  cursor: pointer;
+}
+
 .error {
   color: #e55934;
 }

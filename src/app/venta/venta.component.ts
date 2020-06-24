@@ -22,7 +22,7 @@ export class VentaComponent implements OnInit {
     this.cargarCategorias();
     this.currentDate = new Date();
     this.formProduct = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      nameItem: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
       pic_1: new FormControl('', [Validators.required]),
       pic_2: new FormControl(''),

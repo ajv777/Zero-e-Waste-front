@@ -30,14 +30,14 @@
         <input
           type="text"
           class="form-control"
-          formControlName="name"
+          formControlName="nameItem"
           placeholder="Escribe un nombre para tu producto..."
         />
         <p
           class="error"
           *ngIf="
-            formProduct.controls.name.errors?.required &&
-            formProduct.controls.name.touched
+            formProduct.controls.nameItem.errors?.required &&
+            formProduct.controls.nameItem.touched
           "
         >
           El campo nombre es requerido
