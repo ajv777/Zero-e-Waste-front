@@ -4,6 +4,7 @@ import { UsersService } from 'src/app/servicios/users.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -13,6 +14,12 @@ export class EditProfileComponent implements OnInit {
   user: any;
   formEdit: FormGroup;
   arrItems: any[];
+  lat: Number
+  lng: Number
+  color: any
+  stroke: any
+  strokeWeight: number
+  opacity: Number
 
   constructor(private usersService: UsersService, private router: Router) {}
   // Works
@@ -32,6 +39,18 @@ export class EditProfileComponent implements OnInit {
       Whatsapp: new FormControl(this.user.Whatsapp),
       Email: new FormControl(this.user.Email),
     });
+
+    
+
+    //Map location catching
+    navigator.geolocation.getCurrentPosition(position => {
+      this.lat = position.coords.latitude
+      this.lng = position.coords.longitude
+    })
+    this.color = '#ffffff'
+    this.opacity = 0.5
+    this.stroke = '#000000'
+    this.strokeWeight = 2.5
   }
 
   // Edit user profile - Works
@@ -73,4 +92,5 @@ export class EditProfileComponent implements OnInit {
       }
     });
   }
+  
 }
