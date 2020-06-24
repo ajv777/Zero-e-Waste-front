@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   formLogin: FormGroup;
-  isLogged: boolean;
 
   constructor(private userService: UsersService, private router: Router) {
     this.formLogin = new FormGroup({
@@ -24,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   // Works
   async onSubmit() {
-    const response = await this.userService.loginDos(this.formLogin.value);
+    const response = await this.userService.login(this.formLogin.value);
     // console.log(this.formLogin.value);
     // console.log(response);
     if (response['success']) {
@@ -32,10 +31,7 @@ export class LoginComponent implements OnInit {
       const id_user = response['userId'];
       localStorage.setItem('userToken', token);
       localStorage.setItem('userId', JSON.stringify(id_user));
-      if ((this.isLogged = true)) {
-        localStorage.setItem('isLogged', JSON.stringify(this.isLogged));
-        this.router.navigate(['/home']);
-      }
+      this.router.navigate(['/home']);
     } else {
       Swal.fire('¡Atención!', 'Error en email y/o contraseña', 'warning');
     }

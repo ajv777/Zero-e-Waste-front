@@ -42,6 +42,18 @@ export class CompraComponent implements OnInit {
   // Order by category and price ASC - works
   onClickPriceAsc() {
     this.arrItems = this.arrItems.sort((a, b) => {
+      if (a.Precio < b.Precio) {
+        return 1;
+      }
+      if (a.Precio > b.Precio) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  // Order by category and price DESC - works
+  onClickPriceDesc() {
+    this.arrItems = this.arrItems.sort((a, b) => {
       if (a.Precio > b.Precio) {
         return 1;
       }
@@ -52,18 +64,6 @@ export class CompraComponent implements OnInit {
     });
   }
 
-  // Order by category and price DESC - works
-  onClickPriceDesc() {
-    this.arrItems = this.arrItems.sort((a, b) => {
-      if (a.Precio < b.Precio) {
-        return 1;
-      }
-      if (a.Precio > b.Precio) {
-        return -1;
-      }
-      return 0;
-    });
-  }
   // Order by category and date - works
   onClickDate() {
     this.arrItems = this.arrItems.sort((a, b) => {
