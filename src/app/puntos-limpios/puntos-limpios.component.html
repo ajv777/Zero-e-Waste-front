@@ -1,3 +1,14 @@
 <app-nav></app-nav>
 <h3>Mapa de puntos limpios</h3>
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1967KONAn_8h8g8AhT2a_B4-JucSmSSSt" width="640" height="480"></iframe>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="05">
+    <agm-marker *ngFor="let coord of arrCoords" [latitude]="coord.latitude" [longitude]="coord.longitude"> 
+        <agm-info-window>
+            <p>{{coord.title}}</p>
+            <p>CIF: {{coord.cif}}</p>
+            <p>Dirección: {{coord.address}}</p>
+            <p>Localidad: {{coord.locality}}, {{coord.province}}</p>
+            <p>C.P {{coord.cp}}</p>
+            <p>Notas: {{coord.others}}</p>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
