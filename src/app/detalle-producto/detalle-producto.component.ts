@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../servicios/items.service';
-import { UsersService } from '../servicios/users.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -9,8 +8,8 @@ import { UsersService } from '../servicios/users.service';
   styleUrls: ['./detalle-producto.component.css'],
 })
 export class DetalleProductoComponent implements OnInit {
-  user: any;
   item: any;
+  user: any;
 
   constructor(
     private itemsService: ItemsService,
@@ -26,16 +25,14 @@ export class DetalleProductoComponent implements OnInit {
     this.activatedRoute.params.subscribe(async (params) => {
       /* console.log (params.idItem) */
       const id = params.idItem;
-      const response = await this.itemsService.itemById(id);
-      /* console.log (response); */
+      const response = await this.itemsService.itemAndUser(id);
+
       if (response['error']) {
         this.router.navigate(['/comprar']);
       } else {
-        this.item = response;
+        this.item = response[0];
+        console.log(this.item);
       }
-      console.log(this.item);
     });
-    this.user.Id_User = this.item.Users_Id_User;
-    console.log('user id', this.user.Id_User);
   }
 }

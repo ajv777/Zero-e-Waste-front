@@ -25,18 +25,17 @@
       <h5 class="card-title">Datos del vendedor</h5>
       <ul class="list">
         <!-- On going : get information to table "users" - Query with INNERJOIN -->
-        <li>{{ item?.Users_Id_User }}</li>
-        <!-- <li>{{ this.user.Name }} {{ this.user.Surname }}</li> -->
-        <!-- <li>{{ this.user.Localidad }} ({{ this.user.Province }})</li>
-        <li>Teléfono: {{ this.user.Phone_number }}</li>
-        <li>Disponible por WhatsApp: {{ this.user.Whatsapp }}</li> -->
+        <li>{{ item?.Name }} {{ item?.Surname }}</li>
+        <li>{{ item?.Localidad }} ({{ item?.Province }})</li>
+        <li>Teléfono: {{ item?.Phone_number }}</li>
+        <li>Disponible por WhatsApp: {{ item?.Whatsapp }}</li>
       </ul>
-      <!-- <a href="mailto: {{ this.user.Email }}" class="btn botonZero"
-        >Envía un correo a {{ this.user.Name }}</a
+      <a href="mailto: {{ item?.Email }}" class="btn botonZero"
+        >Envía un correo a {{ item?.Name }}</a
       >
-      <a href="mailto: {{ this.user.Email }}" class="btn botonZero"
-        >Llamar a {{ this.user.Name }}</a
-      > -->
+      <a href="mailto: {{ item?.Email }}" class="btn botonZero"
+        >Llamar a {{ item?.Name }}</a
+      >
     </div>
   </div>
 </div>

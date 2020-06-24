@@ -71,6 +71,14 @@ export class ItemsService {
       )
       .toPromise();
   }
-}
 
-//Comentario
+  // Get item by id and this user
+  itemAndUser(pItemId): Promise<any> {
+    return this.httpClient
+      .get<any>(
+        `${this.baseUrl}/items/user-detail/` + pItemId,
+        this.httpOptions
+      )
+      .toPromise();
+  }
+}
