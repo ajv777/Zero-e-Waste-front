@@ -1,24 +1,18 @@
 <app-nav></app-nav>
-<h3 class="mb-4 d-flex justify-content-center">¿Qué quieres comprar hoy?</h3>
-<div class="container">
-  <div>
-    <select class="custom-select" (click)="onClickCategory($event)">
-      <option value="">Selecciona una categoría</option>
-      <option value="1">Televisión, audio y foto</option>
-      <option value="2">Móviles y telefonía</option>
-      <option value="3">Informática y electrónica</option>
-      <option value="4">Consolas y videojuegos</option>
-      <option value="5">Electrodomésticos</option>
-    </select>
-  </div>
+<h3 class="mb-3 d-flex justify-content-center">¿Qué quieres comprar hoy?</h3>
+<h5 class="mb-3 d-flex justify-content-center">
+  Selecciona una categoría y ordena según tus preferencias
+</h5>
+<div class="container mb-4 d-flex justify-content-center">
+  <select class="custom-select col-8" (click)="onClickCategory($event)">
+    <option value="1">Televisión, audio y foto</option>
+    <option value="2">Móviles y telefonía</option>
+    <option value="3">Informática y electrónica</option>
+    <option value="4">Consolas y videojuegos</option>
+    <option value="5">Electrodomésticos</option>
+  </select>
 </div>
 <div class="filters d-flex justify-content-around mt-3 mb-3">
-  <input
-    class="form-control mr-sm-2 col-3 filter"
-    type="search"
-    placeholder="Busca por palabra clave"
-    aria-label="Search"
-  />
   <div>
     <button type="button" class="btn botonZero" (click)="onClickPriceAsc()">
       Precio (de mayor a menor)
@@ -49,7 +43,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ item.Name }}</h5>
         <p class="card-text">Precio: {{ item.Precio }} €</p>
-        <p class="card-text">Fecha de subida: {{ item.Register_date }}</p>
+        <p class="card-text">Fecha de registro: {{ item.Register_date }}</p>
         <a class="card-link">Ver detalles</a>
       </div>
     </div>

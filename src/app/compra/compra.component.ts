@@ -24,14 +24,25 @@ export class CompraComponent implements OnInit {
       this.arrItems = response;
       this.arrItemsFix = response;
     }
+    this.arrItems.forEach((item) => {
+      item.Register_date = moment(item.Register_date).lang('es').calendar();
+    });
     console.log('array', this.arrItems);
   }
 
   // this.arrItems.filter((item) => item.Users_Id_User.toString() !== Users_Id_User)
 
   // Works
-  onClickCategory($event) {
+  /*   onClickCategory($event) {
     //console.log('array fix', this.arrItemsFix)
+    this.arrItems = [];
+    this.arrItems = this.arrItemsFix.filter(
+      (item) => item.Category_idCategory.toString() === $event.target.value
+    );
+    // console.log('array', this.arrItems)
+  } */
+
+  onClickCategory($event) {
     this.arrItems = [];
     this.arrItems = this.arrItemsFix.filter(
       (item) => item.Category_idCategory.toString() === $event.target.value
