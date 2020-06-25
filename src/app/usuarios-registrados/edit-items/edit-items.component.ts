@@ -15,6 +15,8 @@ export class EditItemsComponent implements OnInit {
   arrCategories: any[];
   files = {};
 
+  // Comentario
+
   constructor(
     private itemsService: ItemsService,
     private router: Router,
