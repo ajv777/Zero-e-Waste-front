@@ -1,19 +1,31 @@
 <app-nav></app-nav>
-<h3>Mapa de puntos limpios</h3>
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="05">
-  <agm-marker
-    *ngFor="let coord of arrCoords"
-    [latitude]="coord.latitude"
-    [longitude]="coord.longitude"
-  >
-    <agm-info-window>
-      <p>{{ coord.title }}</p>
-      <p>CIF: {{ coord.cif }}</p>
-      <p>Dirección: {{ coord.address }}</p>
-      <p>Localidad: {{ coord.locality }}, {{ coord.province }}</p>
-      <p>C.P {{ coord.cp }}</p>
-      <p>Notas: {{ coord.others }}</p>
-    </agm-info-window>
-  </agm-marker>
-</agm-map>
+<div class="container">
+  <h3 class="mb-3 d-flex justify-content-center">
+    ¿Sabes dónde reciclar residuos electrónicos?
+  </h3>
+  <p class="parrafo">
+    La basura electrónica no debe tirarse a contenedores mezclados con otros
+    residuos. En los siguientes puntos limpios puedes llevar y entregar los
+    aparatos electrónicos y electrónicos que ya no utilices, así como sus
+    residuos, para su correcto tratamiento. ¡Forma parte de la solución!
+  </p>
+  <div class="mapaPuntos d-flex justify-content-center">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="06">
+      <agm-marker
+        *ngFor="let coord of arrCoords"
+        [latitude]="coord.latitude"
+        [longitude]="coord.longitude"
+      >
+        <agm-info-window>
+          <p>{{ coord.title }}</p>
+          <p>CIF: {{ coord.cif }}</p>
+          <p>Dirección: {{ coord.address }}</p>
+          <p>Localidad: {{ coord.locality }}, {{ coord.province }}</p>
+          <p>C.P {{ coord.cp }}</p>
+          <p>Notas: {{ coord.others }}</p>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+</div>
 <app-footer></app-footer>

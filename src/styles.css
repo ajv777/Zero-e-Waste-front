@@ -47,6 +47,11 @@ h4 {
   cursor: pointer;
 }
 
+.btnUp {
+  width: 40px;
+  height: 40px;
+}
+
 .error {
   color: #e55934;
 }

@@ -2,7 +2,12 @@
   width: 100%;
   padding: 10px;
 }
+
+.mapItem {
+  padding: 10px;
+}
+
 agm-map {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 400px;
 }

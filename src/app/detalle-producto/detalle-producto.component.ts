@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../servicios/items.service';
 import * as moment from 'moment';
-import { UsersService } from '../servicios/users.service'
+import { UsersService } from '../servicios/users.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -12,12 +12,12 @@ import { UsersService } from '../servicios/users.service'
 export class DetalleProductoComponent implements OnInit {
   item: any;
   user: any;
-  lat: Number
-  lng: Number
-  color: any
-  stroke: any
-  strokeWeight: number
-  opacity: Number
+  lat: Number;
+  lng: Number;
+  color: string;
+  stroke: string;
+  strokeWeight: number;
+  opacity: Number;
 
   constructor(
     private itemsService: ItemsService,
@@ -40,14 +40,14 @@ export class DetalleProductoComponent implements OnInit {
       }
     });
     const response = await this.usersService.userById();
-    this.user = response[0]
+    this.user = response[0];
 
-    this.lat = this.user.Latitude
-    this.lng = this.user.Longitude
+    this.lat = this.user.Latitude;
+    this.lng = this.user.Longitude;
 
-    this.color = '#ffffff'
-    this.opacity = 0.5
-    this.stroke = '#000000'
-    this.strokeWeight = 2.5
+    this.color = '#ffffff';
+    this.opacity = 0.25;
+    this.stroke = '#81c14b';
+    this.strokeWeight = 1;
   }
 }
