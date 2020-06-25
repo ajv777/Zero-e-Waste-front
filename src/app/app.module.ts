@@ -18,6 +18,7 @@ import { NavComponent } from './nav/nav.component';
 import { MisProductosComponent } from './usuarios-registrados/mis-productos/mis-productos.component';
 import { EditItemsComponent } from './usuarios-registrados/edit-items/edit-items.component';
 import { AgmCoreModule } from '@agm/core';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AgmCoreModule } from '@agm/core';
     NavComponent,
     MisProductosComponent,
     EditItemsComponent,
+    FooterComponent,
     
   ],
   imports: [

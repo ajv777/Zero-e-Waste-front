@@ -64,6 +64,7 @@ export class EditItemsComponent implements OnInit {
     for (let key in this.files) {
       formData.append(key, this.files[key]);
     }
+
     this.itemsService
       .updateItemById(this.item.idItem, this.formEdit.value)
       .then((response) => {
