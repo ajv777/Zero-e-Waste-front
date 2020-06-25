@@ -65,7 +65,7 @@ export class EditItemsComponent implements OnInit {
       formData.append(key, this.files[key]);
     }
     this.itemsService
-      .updateItemById(this.item.idItem, this.formEdit.value)
+      .updateItemById(this.item.idItem, formData)
       .then((response) => {
         if (response.success) {
           Swal.fire(
