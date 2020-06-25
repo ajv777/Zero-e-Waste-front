@@ -11,7 +11,6 @@ import { UsersService } from '../servicios/users.service';
 })
 export class DetalleProductoComponent implements OnInit {
   item: any;
-  user: any;
   lat: Number;
   lng: Number;
   color: string;
@@ -22,8 +21,7 @@ export class DetalleProductoComponent implements OnInit {
   constructor(
     private itemsService: ItemsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private usersService: UsersService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   async ngOnInit() {
@@ -35,19 +33,14 @@ export class DetalleProductoComponent implements OnInit {
       } else {
         this.item = response[0];
         this.item.Register_date = moment(this.item.Register_date).format('ll');
-
+        this.lat = this.item.Latitude;
+        this.lng = this.item.Longitude;
+        this.color = '#ffffff';
+        this.opacity = 0.25;
+        this.stroke = '#81c14b';
+        this.strokeWeight = 1;
         console.log(this.item);
       }
     });
-    const response = await this.usersService.userById();
-    this.user = response[0];
-
-    this.lat = this.user.Latitude;
-    this.lng = this.user.Longitude;
-
-    this.color = '#ffffff';
-    this.opacity = 0.25;
-    this.stroke = '#81c14b';
-    this.strokeWeight = 1;
   }
 }

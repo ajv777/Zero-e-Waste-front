@@ -39,7 +39,11 @@
       </div>
       <div *ngIf="lat && lng" type="hidden">
         <div class="mapItem">
-          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
+          <agm-map
+            [latitude]="item?.Latitude"
+            [longitude]="item?.Longitude"
+            [zoom]="14"
+          >
             <agm-circle
               [latitude]="lat"
               [longitude]="lng"
