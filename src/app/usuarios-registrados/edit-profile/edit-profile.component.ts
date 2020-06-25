@@ -43,10 +43,10 @@ export class EditProfileComponent implements OnInit {
     
 
     //Map location catching
-    navigator.geolocation.getCurrentPosition(position => {
-      this.lat = position.coords.latitude
-      this.lng = position.coords.longitude
-    })
+    
+    this.lat = this.user.Latitude
+    this.lng = this.user.Longitude
+
     this.color = '#ffffff'
     this.opacity = 0.5
     this.stroke = '#000000'
