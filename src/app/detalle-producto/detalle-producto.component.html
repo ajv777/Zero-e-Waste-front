@@ -37,6 +37,12 @@
           >Llamar a {{ item?.Name }}</a
         >
       </div>
+      <div *ngIf="lat && lng" type="hidden">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
+          <agm-circle [latitude]="lat" [longitude]="lng" [radius]="1000" [strokeWeight]="strokeWeight" [strokeColor]="stroke" [fillColor]="color" [fillOpacity]="opacity"> 
+          </agm-circle>
+        </agm-map>
+      </div>
     </div>
   </div>
 </div>
