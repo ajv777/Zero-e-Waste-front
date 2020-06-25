@@ -68,7 +68,7 @@ export class EditItemsComponent implements OnInit {
     }
 
     this.itemsService
-      .updateItemById(this.item.idItem, this.formEdit.value)
+      .updateItemById(this.item.idItem, formData)
       .then((response) => {
         if (response.success) {
           Swal.fire(
