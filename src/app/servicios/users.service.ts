@@ -10,7 +10,8 @@ export class UsersService {
   isLogged: boolean;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api';
+    // this.baseUrl = 'http://localhost:3000/api';
+    this.baseUrl = 'https://zeroewasteapp.herokuapp.com/api';
     this.httpOptions = {
       headers: new HttpHeaders({
         'user-token': localStorage.getItem('userToken'),
