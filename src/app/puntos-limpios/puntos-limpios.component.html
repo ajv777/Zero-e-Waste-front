@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <div class="container">
-  <h3 class="mb-3 d-flex justify-content-center">
+  <h3 class="mb-3">
     ¿Sabes dónde reciclar residuos electrónicos?
   </h3>
   <p class="parrafo">
@@ -9,7 +9,7 @@
     aparatos electrónicos que ya no utilices, así como sus residuos, para su
     correcto tratamiento. ¡Forma parte de la solución!
   </p>
-  <div class="mapaPuntos d-flex justify-content-center">
+  <div class="mapPuntos">
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="06">
       <agm-marker
         *ngFor="let coord of arrCoords"

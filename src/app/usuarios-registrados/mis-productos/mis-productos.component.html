@@ -14,7 +14,10 @@
     <h3 class="col-6">Mis productos en venta</h3>
   </div>
   <div class="row mt-4">
-    <div class="card col-4 item" *ngFor="let item of arrItems">
+    <div
+      class="card col-lg-4 col-md-12 col-sm-12 item"
+      *ngFor="let item of arrItems"
+    >
       <div class="card-body">
         <h5 class="card-title">{{ item.NameItem }}</h5>
         <p class="card-text">Precio: {{ item.Precio }} €</p>

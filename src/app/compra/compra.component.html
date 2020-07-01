@@ -1,10 +1,13 @@
 <app-nav></app-nav>
-<h3 class="mb-3 d-flex justify-content-center">¿Qué quieres comprar hoy?</h3>
-<h5 class="mb-3 d-flex justify-content-center">
+<h3 class="mb-3">¿Qué quieres comprar hoy?</h3>
+<h5 class="mb-3">
   Selecciona una categoría y ordena según tus preferencias
 </h5>
 <div class="container mb-4 d-flex justify-content-center">
-  <select class="custom-select col-8" (click)="onClickCategory($event)">
+  <select
+    class="custom-select col-lg-8 col-md-12 col-sm-12"
+    (click)="onClickCategory($event)"
+  >
     <option value="1">Televisión, audio y foto</option>
     <option value="2">Móviles y telefonía</option>
     <option value="3">Informática y electrónica</option>
@@ -32,7 +35,7 @@
 <div class="container">
   <div class="row">
     <div
-      class="card col-3 mt-2 item"
+      class="card col-lg-3 col-md-12 col-sm-12 mt-2 item"
       style="width: 18rem;"
       [routerLink]="['/compra', item.idItem]"
       *ngFor="let item of arrItems"

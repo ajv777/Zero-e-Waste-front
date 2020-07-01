@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-lg-7 col-md-12 col-sm-12">
       <img
         class="card-img-top"
         [src]="'https://zeroewasteapp.herokuapp.com/media/' + item.Pic_1"
@@ -17,7 +17,7 @@
         [src]="'https://zeroewasteapp.herokuapp.com/media/' + item.Pic_3"
       />
     </div>
-    <div class="card card-body col-5">
+    <div class="card card-body col-lg-5 col-md-12 col-sm-12">
       <h3 class="card-title">{{ item?.NameItem }}</h3>
       <h5 class="card-title">Precio: {{ item?.Precio }}€</h5>
       <p class="card-text">{{ item?.Description }}</p>
