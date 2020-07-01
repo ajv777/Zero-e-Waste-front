@@ -58,6 +58,8 @@ header .logo:hover {
   header .menu-list {
     flex-direction: column;
     width: 90%;
+    margin: 0px;
+    padding: 0px;
   }
   header .menu-list li {
     border-bottom: 1px solid white;
