@@ -1,11 +1,11 @@
 <app-nav></app-nav>
-<h3 class="mb-3">¿Qué quieres comprar hoy?</h3>
+<h3 class="mb-3 mt-5">¿Qué quieres comprar hoy?</h3>
 <h5 class="mb-3">
   Selecciona una categoría y ordena según tus preferencias
 </h5>
 <div class="container mb-4 d-flex justify-content-center">
   <select
-    class="custom-select col-lg-8 col-md-12 col-sm-12"
+    class="custom-select col-lg-8 col-md-12 col-sm-12 mt-3 mb-3"
     (click)="onClickCategory($event)"
   >
     <option value="1">Televisión, audio y foto</option>
@@ -15,7 +15,7 @@
     <option value="5">Electrodomésticos</option>
   </select>
 </div>
-<div class="filters d-flex justify-content-around mt-3 mb-3">
+<div class="filters d-flex justify-content-around mt-3 mb-4">
   <div>
     <button type="button" class="btn botonZero" (click)="onClickPriceAsc()">
       Precio (de mayor a menor)
